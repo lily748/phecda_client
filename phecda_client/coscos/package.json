@@ -1,0 +1,20 @@
+{
+  "name": "client",
+  "uuid": "e74cd0aa-85e3-4d28-99fb-ada4913cd441",
+  "version": "3.4.2",
+  "creator": {
+    "version": "3.4.2"
+  },
+  "scripts": {
+    "build-proto:pbjs": "pbjs --dependency protobufjs/minimal.js --target static-module --wrap commonjs --out ./proto/thaidice/thaidice.js ./proto/thaidice/*.proto",
+    "build-proto:pbts": "pbts --main --out ./proto/thaidice/thaidice.d.ts ./proto/thaidice/*.js"
+  },
+  "dependencies": {
+    "fire": "^0.55.1",
+    "fire-fs": "^0.2.4",
+    "fire-path": "^0.1.9",
+    "image-size": "^1.0.1",
+    "protobufjs": "^6.11.2",
+    "spritesmith": "^3.4.0"
+  }
+}

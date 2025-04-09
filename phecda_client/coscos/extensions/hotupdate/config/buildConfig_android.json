@@ -1,0 +1,75 @@
+{
+  "name": "HotUpdate_Demo",
+  "platform": "android",
+  "buildPath": "project://build",
+  "debug": false,
+  "md5Cache": false,
+  "sourceMaps": false,
+  "replaceSplashScreen": true,
+  "mainBundleCompressionType": "merge_dep",
+  "mainBundleIsRemote": false,
+  "mergeStartScene": false,
+  "experimentalEraseModules": false,
+  "compressTexture": true,
+  "packAutoAtlas": true,
+  "startScene": "a398221c-68f0-44fd-8c20-7d20c6bbc7bc",
+  "scenes": [
+    {
+      "url": "db://assets/scence/scene.scene",
+      "uuid": "a398221c-68f0-44fd-8c20-7d20c6bbc7bc",
+      "inBundle": false
+    }
+  ],
+  "outputName": "android",
+  "packages": {
+    "android": {
+      "packageName": "com.test.bundle",
+      "orientation": {
+        "portrait": false,
+        "upsideDown": false,
+        "landscapeRight": true,
+        "landscapeLeft": true
+      },
+      "apiLevel": "android-28",
+      "appABIs": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ],
+      "useDebugKeystore": true,
+      "keystorePath": "",
+      "keystorePassword": "",
+      "keystoreAlias": "",
+      "keystoreAliasPassword": "",
+      "appBundle": false,
+      "androidInstant": false,
+      "remoteUrl": "",
+      "sdkPath": "",
+      "ndkPath": "",
+      "renderBackEnd": {
+        "vulkan": false,
+        "gles3": true,
+        "gles2": true
+      },
+      "__version__": "1.0.0"
+    },
+    "native": {
+      "polyfills": {
+        "asyncFunctions": true
+      },
+      "encrypted": false,
+      "xxteaKey": "24JxvQdWJPd7/kRD",
+      "compressZip": false,
+      "makeAfterBuild": false,
+      "JobSystem": "tbb",
+      "__version__": "1.0.0"
+    },
+    "cocos-service": {
+      "configID": "ef04fe",
+      "services": [],
+      "__version__": "3.0.2"
+    }
+  },
+  "__version__": "1.3.1"
+}

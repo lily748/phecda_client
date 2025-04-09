@@ -1,0 +1,61 @@
+{
+    "id": "10000001",
+    "name": "4pgame",
+    "short_name": "4pgame",
+    "categories": [
+        "photo",
+        "productivity",
+        "utilities"
+    ],
+    "scope": "./",
+    "start_url": "./index.html",
+    "related_applications": [{
+        "platform": "webapp",
+        "url": "https://h5.4p.game/manifest.json"
+    }],
+    "display": "standalone",
+    "theme_color": "#000",
+    "background_color": "#000",
+    "description": "",
+    "screenshots": [
+        {
+            "src": "./screenshot/screenshot0.webp",
+            "type": "image/webp",
+            "sizes": "330x587"
+        },
+        {
+            "src": "./screenshot/screenshot1.webp",
+            "type": "image/webp",
+            "sizes": "330x587"
+        },
+        {
+            "src": "./screenshot/screenshot2.webp",
+            "type": "image/webp",
+            "sizes": "330x587"
+        },
+        {
+            "src": "./screenshot/screenshot3.webp",
+            "type": "image/webp",
+            "sizes": "330x587"
+        }
+    ],
+    "icons": [
+        {
+            "src": "./icons/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./icons/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "./icons/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "orientation": "any"
+}

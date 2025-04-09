@@ -1,0 +1,83 @@
+
+fishing_ani.png
+size: 213,110
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+8a
+  rotate: true
+  xy: 2, 6
+  size: 10, 41
+  orig: 11, 42
+  offset: 1, 0
+  index: -1
+casinozi
+  rotate: true
+  xy: 185, 4
+  size: 104, 26
+  orig: 104, 26
+  offset: 0, 0
+  index: -1
+fishing_ani1
+  rotate: true
+  xy: 45, 3
+  size: 13, 31
+  orig: 16, 33
+  offset: 1, 1
+  index: -1
+fishing_ani2
+  rotate: false
+  xy: 79, 26
+  size: 17, 21
+  orig: 19, 25
+  offset: 1, 2
+  index: -1
+fishing_ani3
+  rotate: true
+  xy: 2, 18
+  size: 90, 75
+  orig: 92, 77
+  offset: 1, 1
+  index: -1
+fishing_ani4
+  rotate: false
+  xy: 99, 3
+  size: 53, 44
+  orig: 53, 44
+  offset: 0, 0
+  index: -1
+fishing_ani5
+  rotate: true
+  xy: 154, 2
+  size: 15, 10
+  orig: 17, 12
+  offset: 1, 1
+  index: -1
+fishing_ani6
+  rotate: true
+  xy: 166, 5
+  size: 12, 8
+  orig: 14, 10
+  offset: 1, 1
+  index: -1
+fishing_ani7
+  rotate: false
+  xy: 78, 6
+  size: 19, 10
+  orig: 21, 12
+  offset: 1, 1
+  index: -1
+light5
+  rotate: true
+  xy: 79, 49
+  size: 59, 104
+  orig: 64, 112
+  offset: 3, 4
+  index: -1
+lizi
+  rotate: false
+  xy: 154, 19
+  size: 28, 28
+  orig: 31, 31
+  offset: 1, 2
+  index: -1

@@ -1,0 +1,27 @@
+
+Winning_effect.png
+size: 655,309
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+light1
+  rotate: true
+  xy: 2, 15
+  size: 292, 249
+  orig: 294, 251
+  offset: 1, 1
+  index: -1
+lighta
+  rotate: true
+  xy: 455, 2
+  size: 305, 198
+  orig: 308, 201
+  offset: 1, 1
+  index: -1
+lightb
+  rotate: true
+  xy: 253, 2
+  size: 305, 200
+  orig: 308, 203
+  offset: 2, 1
+  index: -1

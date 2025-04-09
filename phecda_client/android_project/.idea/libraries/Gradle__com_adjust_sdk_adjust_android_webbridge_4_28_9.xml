@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.adjust.sdk:adjust-android-webbridge:4.28.9">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.adjust.sdk/adjust-android-webbridge/4.28.9/8f46467fd8f9fff69a3a792b944aba087375852a/adjust-android-webbridge-4.28.9.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.adjust.sdk/adjust-android-webbridge/4.28.9/a7a2e7eaaaa6f244d28a0225d1cab00d71e90158/adjust-android-webbridge-4.28.9-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.adjust.sdk/adjust-android-webbridge/4.28.9/e5d6b6101f6a7d23cc8ddd4612d2f6aef49a921e/adjust-android-webbridge-4.28.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

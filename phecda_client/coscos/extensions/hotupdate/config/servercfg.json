@@ -1,0 +1,12 @@
+[
+    {
+      "name": "测试服",
+      "cdn_address": "https://192.168.0.1/testupdate",
+      "res_address": ""
+    },
+    {
+      "name": "正式服",
+      "cdn_address": "https://192.168.0.1/hotupdate",
+      "res_address": ""
+    }
+  ]

@@ -1,0 +1,18 @@
+info face="face" size=71
+common lineHeight=71 scaleW=223 scaleH=216 pages=1
+page id=0 file="truntable_amount.png"
+chars count=14
+char id=52 x=53 y=0 width=42 height=71 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=49 x=41 y=144 width=30 height=71 xoffset=0 yoffset=0 xadvance=30 page=0 chnl=15
+char id=51 x=43 y=72 width=40 height=71 xoffset=0 yoffset=0 xadvance=40 page=0 chnl=15
+char id=48 x=84 y=72 width=40 height=71 xoffset=0 yoffset=0 xadvance=40 page=0 chnl=15
+char id=8377 x=96 y=0 width=42 height=71 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=46 x=72 y=144 width=16 height=71 xoffset=0 yoffset=0 xadvance=16 page=0 chnl=15
+char id=56 x=125 y=72 width=40 height=71 xoffset=0 yoffset=0 xadvance=40 page=0 chnl=15
+char id=55 x=182 y=0 width=40 height=71 xoffset=0 yoffset=0 xadvance=40 page=0 chnl=15
+char id=50 x=139 y=0 width=42 height=71 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=57 x=182 y=72 width=40 height=71 xoffset=0 yoffset=0 xadvance=40 page=0 chnl=15
+char id=54 x=0 y=144 width=40 height=71 xoffset=0 yoffset=0 xadvance=40 page=0 chnl=15
+char id=53 x=0 y=72 width=42 height=71 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=88 x=0 y=0 width=52 height=71 xoffset=0 yoffset=0 xadvance=52 page=0 chnl=15
+char id=44 x=89 y=144 width=16 height=71 xoffset=0 yoffset=0 xadvance=16 page=0 chnl=15

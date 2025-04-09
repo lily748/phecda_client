@@ -1,0 +1,74 @@
+{
+  "ver": "1.0.22",
+  "importer": "image",
+  "imported": true,
+  "uuid": "aadfed96-ae81-404d-b2d1-fa46020cd9e6",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "aadfed96-ae81-404d-b2d1-fa46020cd9e6@6c48a",
+      "displayName": "daily_report_bg",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "aadfed96-ae81-404d-b2d1-fa46020cd9e6"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "aadfed96-ae81-404d-b2d1-fa46020cd9e6@f9941",
+      "displayName": "daily_report_bg",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 0,
+        "trimY": 0,
+        "width": 688,
+        "height": 169,
+        "rawWidth": 688,
+        "rawHeight": 169,
+        "borderTop": 72,
+        "borderBottom": 56,
+        "borderLeft": 228,
+        "borderRight": 301,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "aadfed96-ae81-404d-b2d1-fa46020cd9e6@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.9",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "sprite-frame",
+    "redirect": "aadfed96-ae81-404d-b2d1-fa46020cd9e6@f9941"
+  }
+}

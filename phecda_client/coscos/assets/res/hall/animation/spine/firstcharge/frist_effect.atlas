@@ -1,0 +1,41 @@
+
+frist_effect.png
+size: 79,73
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+frist_effect1
+  rotate: false
+  xy: 2, 32
+  size: 52, 39
+  orig: 64, 46
+  offset: 6, 2
+  index: -1
+frist_effect3
+  rotate: true
+  xy: 33, 3
+  size: 27, 20
+  orig: 28, 21
+  offset: 1, 0
+  index: -1
+frist_effect4
+  rotate: false
+  xy: 55, 8
+  size: 21, 13
+  orig: 27, 18
+  offset: 3, 1
+  index: -1
+frist_effect6
+  rotate: false
+  xy: 2, 2
+  size: 29, 28
+  orig: 40, 34
+  offset: 5, 2
+  index: -1
+frist_effect7
+  rotate: true
+  xy: 56, 23
+  size: 48, 21
+  orig: 48, 25
+  offset: 0, 4
+  index: -1

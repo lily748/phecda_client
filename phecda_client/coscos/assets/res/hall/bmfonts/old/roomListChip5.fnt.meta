@@ -1,0 +1,176 @@
+{
+  "ver": "1.0.5",
+  "importer": "bitmap-font",
+  "imported": true,
+  "uuid": "f8b43046-34ed-439c-b5d5-9f4c9bc8cff2",
+  "files": [
+    ".json"
+  ],
+  "subMetas": {},
+  "userData": {
+    "_fntConfig": {
+      "commonHeight": 50,
+      "fontSize": 50,
+      "atlasName": "roomListChip5.png",
+      "fontDefDictionary": {
+        "44": {
+          "rect": {
+            "x": 135,
+            "y": 71,
+            "width": 24,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 24
+        },
+        "46": {
+          "rect": {
+            "x": 84,
+            "y": 142,
+            "width": 17,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 17
+        },
+        "48": {
+          "rect": {
+            "x": 0,
+            "y": 71,
+            "width": 45,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 45
+        },
+        "49": {
+          "rect": {
+            "x": 44,
+            "y": 142,
+            "width": 40,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 40
+        },
+        "50": {
+          "rect": {
+            "x": 46,
+            "y": 71,
+            "width": 44,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 45
+        },
+        "51": {
+          "rect": {
+            "x": 90,
+            "y": 71,
+            "width": 45,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 45
+        },
+        "52": {
+          "rect": {
+            "x": 114,
+            "y": 0,
+            "width": 48,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 48
+        },
+        "53": {
+          "rect": {
+            "x": 163,
+            "y": 0,
+            "width": 44,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 45
+        },
+        "54": {
+          "rect": {
+            "x": 207,
+            "y": 0,
+            "width": 44,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 44
+        },
+        "55": {
+          "rect": {
+            "x": 208,
+            "y": 71,
+            "width": 43,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 44
+        },
+        "56": {
+          "rect": {
+            "x": 0,
+            "y": 142,
+            "width": 44,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 44
+        },
+        "57": {
+          "rect": {
+            "x": 162,
+            "y": 71,
+            "width": 45,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 45
+        },
+        "107": {
+          "rect": {
+            "x": 60,
+            "y": 0,
+            "width": 54,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 54
+        },
+        "109": {
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 60,
+            "height": 71
+          },
+          "xOffset": 0,
+          "yOffset": 0,
+          "xAdvance": 60
+        }
+      },
+      "kerningDict": {}
+    },
+    "fontSize": 50,
+    "textureUuid": "39583ccc-a46e-4096-9898-6650a94c90c1"
+  }
+}

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.appsflyer:af-android-sdk:6.13.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08b1113db668b137b22aa6143567c01c/jetified-af-android-sdk-6.13.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08b1113db668b137b22aa6143567c01c/jetified-af-android-sdk-6.13.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/08b1113db668b137b22aa6143567c01c/jetified-af-android-sdk-6.13.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.appsflyer/af-android-sdk/6.13.1/d7d8adb7c331be79dcee0318c3ded35eee401471/af-android-sdk-6.13.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

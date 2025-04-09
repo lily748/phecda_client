@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.snail:antifake:1.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e3017c7a5f0d2e3285cde0de80251d6e/jetified-antifake-1.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e3017c7a5f0d2e3285cde0de80251d6e/jetified-antifake-1.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e3017c7a5f0d2e3285cde0de80251d6e/jetified-antifake-1.4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.snail/antifake/1.4/9598c8245dd713cbb80736aaef1ff861a4f83552/antifake-1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

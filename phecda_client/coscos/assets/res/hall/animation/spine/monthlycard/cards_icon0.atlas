@@ -1,0 +1,55 @@
+
+cards_icon0.png
+size: 141,142
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+82
+  rotate: true
+  xy: 87, 17
+  size: 55, 49
+  orig: 64, 49
+  offset: 4, 0
+  index: -1
+cards1
+  rotate: false
+  xy: 2, 74
+  size: 106, 66
+  orig: 109, 70
+  offset: 2, 2
+  index: -1
+cards2
+  rotate: false
+  xy: 87, 2
+  size: 31, 13
+  orig: 31, 13
+  offset: 0, 0
+  index: -1
+cards3
+  rotate: false
+  xy: 120, 2
+  size: 17, 13
+  orig: 17, 13
+  offset: 0, 0
+  index: -1
+cards4
+  rotate: false
+  xy: 110, 74
+  size: 29, 27
+  orig: 32, 31
+  offset: 2, 2
+  index: -1
+cards5
+  rotate: true
+  xy: 110, 103
+  size: 37, 24
+  orig: 40, 26
+  offset: 1, 1
+  index: -1
+cards6
+  rotate: false
+  xy: 2, 15
+  size: 83, 57
+  orig: 83, 57
+  offset: 0, 0
+  index: -1

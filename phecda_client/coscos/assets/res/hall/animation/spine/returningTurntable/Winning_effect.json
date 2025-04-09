@@ -1,0 +1,45 @@
+{
+"skeleton": { "hash": "wq3H7kZI3asolO7NddeCgCTu/BI", "spine": "3.8.99", "x": -155.32, "y": -147.98, "width": 308, "height": 260 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "lighta", "parent": "root", "x": -0.16, "y": 24.62 }
+],
+"slots": [
+	{ "name": "light1", "bone": "root", "attachment": "light1", "blend": "additive" },
+	{ "name": "lighta", "bone": "lighta", "attachment": "lightb" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"light1": {
+				"light1": { "x": 0.68, "y": -22.48, "width": 294, "height": 251 }
+			},
+			"lighta": {
+				"lighta": { "x": 4.84, "y": -14.11, "width": 308, "height": 201 },
+				"lightb": { "x": -1.16, "y": -14.11, "width": 308, "height": 203 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"light1": {
+				"color": [
+					{ "color": "ffffff67" },
+					{ "time": 0.5, "color": "ffffffa0" },
+					{ "time": 1, "color": "ffffff67" }
+				]
+			},
+			"lighta": {
+				"attachment": [
+					{ "name": "lighta" },
+					{ "time": 0.5, "name": "lightb" },
+					{ "time": 1, "name": "lighta" }
+				]
+			}
+		}
+	}
+}
+}

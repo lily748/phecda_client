@@ -1,0 +1,104 @@
+
+Get_effect.png
+size: 1093,348
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+200
+  rotate: false
+  xy: 346, 6
+  size: 276, 108
+  orig: 278, 112
+  offset: 1, 2
+  index: -1
+200bg
+  rotate: false
+  xy: 346, 197
+  size: 504, 149
+  orig: 543, 153
+  offset: 22, 2
+  index: -1
+Withdrawal successfully
+  rotate: false
+  xy: 624, 79
+  size: 347, 35
+  orig: 347, 35
+  offset: 0, 0
+  index: -1
+al
+  rotate: false
+  xy: 624, 13
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+con0
+  rotate: false
+  xy: 346, 116
+  size: 572, 79
+  orig: 594, 92
+  offset: 11, 9
+  index: -1
+jinbi1
+  rotate: true
+  xy: 920, 117
+  size: 20, 67
+  orig: 78, 68
+  offset: 29, 1
+  index: -1
+jinbi2
+  rotate: false
+  xy: 852, 210
+  size: 38, 67
+  orig: 78, 68
+  offset: 20, 1
+  index: -1
+jinbi3
+  rotate: false
+  xy: 852, 279
+  size: 60, 67
+  orig: 78, 68
+  offset: 9, 1
+  index: -1
+jinbi4
+  rotate: false
+  xy: 846, 10
+  size: 68, 67
+  orig: 78, 68
+  offset: 5, 1
+  index: -1
+jinbi5
+  rotate: false
+  xy: 916, 10
+  size: 51, 67
+  orig: 78, 68
+  offset: 13, 1
+  index: -1
+jinbi6
+  rotate: true
+  xy: 989, 99
+  size: 38, 67
+  orig: 78, 68
+  offset: 20, 1
+  index: -1
+light1
+  rotate: false
+  xy: 754, 4
+  size: 90, 73
+  orig: 90, 73
+  offset: 0, 0
+  index: -1
+light23
+  rotate: true
+  xy: 920, 139
+  size: 207, 171
+  orig: 218, 209
+  offset: 10, 17
+  index: -1
+zhuanp1
+  rotate: false
+  xy: 2, 2
+  size: 342, 344
+  orig: 352, 354
+  offset: 5, 5
+  index: -1

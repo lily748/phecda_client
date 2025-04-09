@@ -1,0 +1,14 @@
+{
+  "ver": "1.1.35",
+  "importer": "prefab",
+  "imported": true,
+  "uuid": "9faccbc8-c09d-457f-ba2d-85f16974f1ff",
+  "files": [
+    ".json"
+  ],
+  "subMetas": {},
+  "userData": {
+    "syncNodeName": "GameConfig",
+    "persistent": true
+  }
+}

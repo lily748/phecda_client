@@ -1,0 +1,74 @@
+{
+  "ver": "1.0.22",
+  "importer": "image",
+  "imported": true,
+  "uuid": "86f3c6c1-8720-4d9c-98eb-67970598558a",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "86f3c6c1-8720-4d9c-98eb-67970598558a@6c48a",
+      "displayName": "pri_bg.9",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "86f3c6c1-8720-4d9c-98eb-67970598558a"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "86f3c6c1-8720-4d9c-98eb-67970598558a@f9941",
+      "displayName": "pri_bg.9",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": -0.5,
+        "trimX": 0,
+        "trimY": 1,
+        "width": 750,
+        "height": 256,
+        "rawWidth": 750,
+        "rawHeight": 257,
+        "borderTop": 99,
+        "borderBottom": 64,
+        "borderLeft": 40,
+        "borderRight": 40,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "86f3c6c1-8720-4d9c-98eb-67970598558a@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.9",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "sprite-frame",
+    "redirect": "86f3c6c1-8720-4d9c-98eb-67970598558a@f9941"
+  }
+}

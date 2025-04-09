@@ -1,0 +1,123 @@
+<ui-section header="主包Manifest配置" expand>
+    <ui-prop>
+        <ui-label class="contentColor">注意，主包版本目前只包含了 assets/main &
+            assets/resources,如果对src目录下有需要升级的，请在extensions/hotupdate/panels/index.js的getMainBundleIncludes函数中添加进入版本
+        </ui-label>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor" tooltip="选择所需的服务器类型">服务器类型</ui-label>
+        <ui-select v-bind:disabled="isProcessing" title="服务器类型" slot="content"
+            v-on:change="onChangeServer($event.target.value)" v-bind:value="serverCfg.name">
+            <option v-for="cfg in serverCfgs" :value="cfg.name">{{cfg.name}}</option>
+        </ui-select>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor" tooltip="选择需要打的的配置文件">打包配置</ui-label>
+        <ui-select v-bind:disabled="isProcessing" title="打包配置" slot="content"
+            v-on:change="onChangePackage($event.target.value)" v-bind:value="packageCfg.name">
+            <option v-for="cfg in packageCfgs" :value="cfg.name">{{cfg.name+" "+cfg.packageName}}</option>
+        </ui-select>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor" tooltip="请选择相对应的平台">平台</ui-label>
+        <ui-select v-bind:disabled="isProcessing" title="平台" slot="content"
+            v-on:change="onChangePlatform($event.target.value)" v-bind:value="platform">
+            <option v-for="p in platforms" :value="p">{{p}}</option>
+        </ui-select>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor" tooltip="游戏热更新服务器地址">CDN地址</ui-label>
+        <ui-label slot="content" v-bind:disabled="isProcessing" class="contentColor" v-bind:value="serverCfg.cdn_address"></ui-label>
+        <!-- <ui-button slot="content" v-bind:disabled="isProcessing" v-on:confirm="onUserLocalIP">使用本机IP</ui-button> -->
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor" tooltip="RES服务器地址">RES地址</ui-label>
+        <ui-label slot="content" v-bind:disabled="isProcessing" class="contentColor" v-bind:value="serverCfg.res_address"></ui-label>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor" tooltip="android或者xcode工程路径">工程路径</ui-label>
+        <ui-file v-bind:disabled="isProcessing" v-bind:value="projectPath"
+            @confirm="onChangeProjectPath($event.target.value)" slot="content" type="directory"></ui-file>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor" tooltip="编辑器路径">引擎路径</ui-label>
+        <ui-file v-bind:disabled="isProcessing" v-bind:value="enginePath"
+            @confirm="onChangeEnginePath($event.target.value)" slot="content" type="file"></ui-file>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor"
+            tooltip="该目录指向构建生成的bulid/(android|windows)/assets目录，manifest文件将会生成在这个目录下">构建目录</ui-label>
+        <ui-file v-bind:disabled="isProcessing" v-bind:value="buildDir"
+            @confirm="onBuildDirConfirm($event.target.value)" slot="content" type="directory"></ui-file>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor" tooltip="bundle输出目录">输出目录</ui-label>
+        <ui-file v-bind:disabled="isProcessing" v-bind:value="buildOutDir"
+            @confirm="this.onBuildOutDirConfirm($event.target.value)" slot="content" type="directory"></ui-file>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor">版本生成进度</ui-label>
+        <ui-progress slot="content" v-bind:value="createProgress"></ui-progress>
+    </ui-prop>
+</ui-section>
+<ui-section header="Bundles Manifest生成配置" expand>
+    <ui-prop v-for="bundle in bundles" v-if="isRouterAlive">
+        <ui-label slot="label" class="titleColor">{{ bundle.name + "(" + bundle.bundle + ")" }}</ui-label>
+        <ui-checkbox v-bind:disabled="isProcessing" slot="content" class="contentColor" v-bind:value="bundle.select"
+            @confirm="onSelectBundle($event.target.value,bundle.bundle)"></ui-checkbox>
+        <ui-label slot="content" class="titleColor">版本号:</ui-label>
+        <ui-input slot="content" class="contentColor" v-on:blur="onInputVersionOver($event.target.value,bundle.bundle)"
+            v-bind:value="bundle.ver" v-bind:disabled="isProcessing">
+        </ui-input>
+        <ui-select v-bind:disabled="isProcessing" title="版本号选择" slot="content"
+            v-on:change="onSelectVersion($event.target.value,bundle.bundle)" v-bind:value="bundle.versions[0]">
+            <option v-for="version in bundle.versions" :value="bundle.versions[version]">{{version}}</option>
+        </ui-select>
+        <ui-button @confirm="onCommitVersionToServer(bundle.bundle)" v-bind:disabled="isProcessing" slot="content"
+            class="red">提交版本号</ui-button>
+        <!-- <ui-button @confirm="onOpenVersionToServer(bundle.bundle)" v-bind:disabled="isProcessing" slot="content"
+            class="green">开放版本号</ui-button> -->
+        <ui-button @confirm="onshowInExplorer(bundle.bundle)" v-bind:disabled="isProcessing" slot="content"
+            class="green">打开文件夹</ui-button>
+        <ui-button @confirm="onDeployToRemote(bundle.bundle)" v-bind:disabled="isProcessing" slot="content"
+            class="green">上传OSS</ui-button>
+        <!-- <ui-button @confirm="onOpenVersionToServer(bundle.bundle)" v-bind:disabled="isProcessing" slot="content" class="green">部署到CDN</ui-button> -->
+        <!-- <ui-button @confirm="onDelBundle(bundle.bundle)" v-bind:disabled="isProcessing" slot="content" >删除</ui-button> -->
+    </ui-prop>
+</ui-section>
+
+<!-- 测试环境 -->
+<ui-section header="功能" expand>
+    <!-- <ui-prop>
+        <ui-label slot="label" class="titleColor" tooltip="主包地址,显示格式 [版本号]:md5">主包地址</ui-label>
+        <ui-label slot="content" class="titleColor" v-bind:value="remoteVersion">-</ui-label>
+        <ui-button @confirm="onRefreshMainVersion" slot="content">刷新</ui-button>
+    </ui-prop>
+    <ui-prop v-for="bundle in remoteBundles">
+        <ui-label slot="label" class="titleColor">{{ bundle.name + "(" + bundle.dir + ")" }}</ui-label>
+        <ui-label slot="content" class="titleColor">{{bundle.md5}}</ui-label>
+        <ui-button @confirm="onRefreshVersion(bundle.dir)" slot="content">刷新</ui-button>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor" tooltip="当点击部署时会直接部署到这个地址上">本机服务器路径</ui-label>
+        <ui-file v-bind:value="remoteDir" @confirm="onRemoteDirConfirm($event.target.value)" slot="content"
+            type="directory"></ui-file>
+    </ui-prop>
+    <ui-prop>
+        <ui-label slot="label" class="titleColor">本地测试服务器部署操作</ui-label>
+    </ui-prop>
+    <ui-prop>
+        <ui-progress v-bind:value="progress" style="width: 100%;"></ui-progress>
+    </ui-prop> -->
+    <ui-prop>
+        <ui-label slot="label" class="titleColor">操作</ui-label>
+        <ui-checkbox slot="content" v-bind:disabled="isProcessing" v-bind:value="autoCreate"
+            @confirm="onChangeAutoBuild($event.target.value)" tooltip="当构建完成后，自动生成版本控制文件">是否构建发布</ui-checkbox>
+    </ui-prop>
+    <ui-prop>
+        <ui-button v-bind:disabled="isProcessing" @confirm="onRefresh" slot="content">刷新</ui-button>
+        <ui-button v-bind:disabled="isProcessing" @confirm="onBuildBundle" slot="content">资源构建</ui-button>
+        <ui-button v-bind:disabled="isProcessing" @confirm="onBuildPackage" slot="content">平台打包</ui-button>
+        <ui-button v-bind:disabled="isProcessing" @confirm="onDeployToRemote" slot="content">资源部署</ui-button>
+    </ui-prop>
+</ui-section>

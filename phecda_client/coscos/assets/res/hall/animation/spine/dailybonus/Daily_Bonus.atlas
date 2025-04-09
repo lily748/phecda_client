@@ -1,0 +1,97 @@
+
+Daily_Bonus.png
+size: 197,839
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Daily Bonus
+  rotate: true
+  xy: 2, 287
+  size: 370, 63
+  orig: 372, 65
+  offset: 1, 1
+  index: -1
+bia
+  rotate: true
+  xy: 97, 2
+  size: 64, 76
+  orig: 68, 80
+  offset: 2, 2
+  index: -1
+book
+  rotate: true
+  xy: 67, 534
+  size: 123, 128
+  orig: 126, 132
+  offset: 1, 2
+  index: -1
+caidai1
+  rotate: true
+  xy: 132, 146
+  size: 25, 40
+  orig: 28, 42
+  offset: 1, 1
+  index: -1
+caidai2
+  rotate: true
+  xy: 97, 68
+  size: 76, 79
+  orig: 76, 79
+  offset: 0, 0
+  index: -1
+caidai3
+  rotate: true
+  xy: 158, 244
+  size: 86, 37
+  orig: 86, 37
+  offset: 0, 0
+  index: -1
+caidai4
+  rotate: false
+  xy: 132, 173
+  size: 59, 69
+  orig: 60, 69
+  offset: 0, 0
+  index: -1
+caidai5
+  rotate: false
+  xy: 67, 332
+  size: 114, 62
+  orig: 114, 62
+  offset: 0, 0
+  index: -1
+caidai6
+  rotate: true
+  xy: 67, 294
+  size: 36, 89
+  orig: 36, 89
+  offset: 0, 0
+  index: -1
+jin2
+  rotate: true
+  xy: 67, 396
+  size: 136, 111
+  orig: 138, 113
+  offset: 1, 1
+  index: -1
+jina
+  rotate: true
+  xy: 2, 8
+  size: 148, 93
+  orig: 150, 95
+  offset: 1, 1
+  index: -1
+light_bg
+  rotate: false
+  xy: 2, 158
+  size: 128, 127
+  orig: 128, 127
+  offset: 0, 0
+  index: -1
+lightsa
+  rotate: true
+  xy: 2, 659
+  size: 178, 180
+  orig: 196, 201
+  offset: 8, 9
+  index: -1

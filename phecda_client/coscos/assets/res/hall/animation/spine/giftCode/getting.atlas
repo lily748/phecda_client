@@ -1,0 +1,97 @@
+
+getting.png
+size: 969,306
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+4m
+  rotate: false
+  xy: 598, 2
+  size: 369, 302
+  orig: 383, 316
+  offset: 7, 7
+  index: -1
+al
+  rotate: false
+  xy: 211, 114
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+getting20
+  rotate: false
+  xy: 2, 180
+  size: 594, 124
+  orig: 594, 124
+  offset: 0, 0
+  index: -1
+gos
+  rotate: false
+  xy: 398, 67
+  size: 49, 42
+  orig: 49, 42
+  offset: 0, 0
+  index: -1
+gos1
+  rotate: false
+  xy: 343, 59
+  size: 53, 50
+  orig: 54, 50
+  offset: 0, 0
+  index: -1
+jinbi1
+  rotate: true
+  xy: 211, 17
+  size: 20, 67
+  orig: 78, 68
+  offset: 29, 1
+  index: -1
+jinbi2
+  rotate: false
+  xy: 526, 111
+  size: 38, 67
+  orig: 78, 68
+  offset: 20, 1
+  index: -1
+jinbi3
+  rotate: false
+  xy: 411, 111
+  size: 60, 67
+  orig: 78, 68
+  offset: 9, 1
+  index: -1
+jinbi4
+  rotate: false
+  xy: 341, 111
+  size: 68, 67
+  orig: 78, 68
+  offset: 5, 1
+  index: -1
+jinbi5
+  rotate: false
+  xy: 473, 111
+  size: 51, 67
+  orig: 78, 68
+  offset: 13, 1
+  index: -1
+jinbi6
+  rotate: false
+  xy: 303, 42
+  size: 38, 67
+  orig: 78, 68
+  offset: 20, 1
+  index: -1
+light1
+  rotate: false
+  xy: 211, 39
+  size: 90, 73
+  orig: 90, 73
+  offset: 0, 0
+  index: -1
+light23
+  rotate: false
+  xy: 2, 7
+  size: 207, 171
+  orig: 218, 209
+  offset: 10, 17
+  index: -1

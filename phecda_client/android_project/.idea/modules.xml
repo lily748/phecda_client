@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/channel.iml" filepath="$PROJECT_DIR$/.idea/modules/channel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/channel/channel.channel.iml" filepath="$PROJECT_DIR$/.idea/modules/channel/channel.channel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/channel/com.casino.brl/channel.channel.com.casino.brl.iml" filepath="$PROJECT_DIR$/.idea/modules/channel/com.casino.brl/channel.channel.com.casino.brl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/channel/com.casino.brl/channel.channel.com.casino.brl.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/channel/com.casino.brl/channel.channel.com.casino.brl.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/channel/com.casino.brl/channel.channel.com.casino.brl.main.iml" filepath="$PROJECT_DIR$/.idea/modules/channel/com.casino.brl/channel.channel.com.casino.brl.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/channel/com.casino.brl/channel.channel.com.casino.brl.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/channel/com.casino.brl/channel.channel.com.casino.brl.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libcocos/channel.libcocos.iml" filepath="$PROJECT_DIR$/.idea/modules/libcocos/channel.libcocos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libcocos/channel.libcocos.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/libcocos/channel.libcocos.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libcocos/channel.libcocos.main.iml" filepath="$PROJECT_DIR$/.idea/modules/libcocos/channel.libcocos.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libcocos/channel.libcocos.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/libcocos/channel.libcocos.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libservice/channel.libservice.iml" filepath="$PROJECT_DIR$/.idea/modules/libservice/channel.libservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libservice/channel.libservice.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/libservice/channel.libservice.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libservice/channel.libservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/libservice/channel.libservice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libservice/channel.libservice.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/libservice/channel.libservice.unitTest.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+
+light_ani.png
+size: 47,47
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+light_ani
+  rotate: false
+  xy: 2, 2
+  size: 43, 43
+  orig: 45, 45
+  offset: 1, 1
+  index: -1

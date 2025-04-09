@@ -1,0 +1,55 @@
+
+sports_ani.png
+size: 153,172
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ball
+  rotate: false
+  xy: 2, 9
+  size: 72, 72
+  orig: 74, 74
+  offset: 1, 1
+  index: -1
+casinozi
+  rotate: false
+  xy: 2, 144
+  size: 105, 26
+  orig: 105, 26
+  offset: 0, 0
+  index: -1
+h_pai
+  rotate: true
+  xy: 76, 2
+  size: 49, 63
+  orig: 53, 66
+  offset: 2, 1
+  index: -1
+light5
+  rotate: true
+  xy: 2, 83
+  size: 59, 104
+  orig: 64, 112
+  offset: 3, 4
+  index: -1
+lizi
+  rotate: false
+  xy: 76, 53
+  size: 28, 28
+  orig: 31, 31
+  offset: 1, 2
+  index: -1
+r_pai
+  rotate: false
+  xy: 108, 59
+  size: 41, 60
+  orig: 44, 64
+  offset: 1, 2
+  index: -1
+shaozi
+  rotate: true
+  xy: 109, 121
+  size: 49, 42
+  orig: 53, 46
+  offset: 2, 2
+  index: -1

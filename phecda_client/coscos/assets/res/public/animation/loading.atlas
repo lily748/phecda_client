@@ -1,0 +1,20 @@
+
+loading.png
+size: 74,41
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cs
+  rotate: false
+  xy: 52, 19
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+f1
+  rotate: false
+  xy: 2, 2
+  size: 48, 37
+  orig: 58, 59
+  offset: 6, 13
+  index: -1

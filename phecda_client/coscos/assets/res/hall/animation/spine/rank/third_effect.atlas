@@ -1,0 +1,13 @@
+
+third_effect.png
+size: 175,153
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+a3
+  rotate: false
+  xy: 2, 2
+  size: 171, 149
+  orig: 208, 228
+  offset: 18, 39
+  index: -1

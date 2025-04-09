@@ -1,0 +1,17 @@
+info face="face" size=56
+common lineHeight=56 scaleW=180 scaleH=171 pages=1
+page id=0 file="backflow_num.png"
+chars count=13
+char id=55 x=0 y=0 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15
+char id=56 x=36 y=0 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15
+char id=50 x=72 y=0 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15
+char id=52 x=108 y=0 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15
+char id=48 x=0 y=57 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15
+char id=8377 x=36 y=57 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15
+char id=54 x=72 y=57 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15
+char id=44 x=36 y=114 width=17 height=56 xoffset=0 yoffset=0 xadvance=17 page=0 chnl=15
+char id=51 x=108 y=57 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15
+char id=46 x=54 y=114 width=15 height=56 xoffset=0 yoffset=0 xadvance=15 page=0 chnl=15
+char id=53 x=144 y=0 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15
+char id=49 x=144 y=57 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15
+char id=57 x=0 y=114 width=35 height=56 xoffset=0 yoffset=0 xadvance=35 page=0 chnl=15

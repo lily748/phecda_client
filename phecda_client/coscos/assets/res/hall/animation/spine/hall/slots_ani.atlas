@@ -1,0 +1,55 @@
+
+slots_ani.png
+size: 270,114
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+777
+  rotate: true
+  xy: 2, 2
+  size: 8, 42
+  orig: 8, 42
+  offset: 0, 0
+  index: -1
+casinozi
+  rotate: false
+  xy: 152, 5
+  size: 86, 26
+  orig: 86, 26
+  offset: 0, 0
+  index: -1
+light00
+  rotate: true
+  xy: 204, 33
+  size: 79, 49
+  orig: 81, 51
+  offset: 1, 0
+  index: -1
+light01
+  rotate: true
+  xy: 152, 33
+  size: 79, 50
+  orig: 81, 51
+  offset: 1, 0
+  index: -1
+light5
+  rotate: false
+  xy: 91, 8
+  size: 59, 104
+  orig: 64, 112
+  offset: 3, 4
+  index: -1
+lizi
+  rotate: false
+  xy: 240, 3
+  size: 28, 28
+  orig: 31, 31
+  offset: 1, 2
+  index: -1
+tu77
+  rotate: true
+  xy: 2, 12
+  size: 100, 87
+  orig: 114, 103
+  offset: 8, 12
+  index: -1

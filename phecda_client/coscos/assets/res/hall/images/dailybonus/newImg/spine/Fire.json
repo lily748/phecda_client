@@ -1,0 +1,45 @@
+{
+"skeleton": { "hash": "gvm2FplRrUJmPMJ2X9EMq1r2b2w", "spine": "3.8.99", "x": -29, "y": -16.14, "width": 58, "height": 116 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "Fire_01", "parent": "root", "y": 41.86 }
+],
+"slots": [
+	{ "name": "Fire_01", "bone": "Fire_01", "attachment": "Fire_01" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Fire_01": {
+				"Fire_01": { "width": 58, "height": 116 },
+				"Fire_1": { "path": "Fire_02", "width": 58, "height": 116 },
+				"Fire_2": { "path": "Fire_03", "width": 58, "height": 116 },
+				"Fire_3": { "path": "Fire_04", "width": 58, "height": 116 },
+				"Fire_4": { "path": "Fire_05", "width": 58, "height": 116 },
+				"Fire_5": { "path": "Fire_06", "width": 58, "height": 116 },
+				"Fire_6": { "path": "Fire_07", "width": 58, "height": 116 },
+				"Fire_7": { "path": "Fire_08", "width": 58, "height": 116 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"Fire_01": {
+				"attachment": [
+					{ "time": 0.0667, "name": "Fire_1" },
+					{ "time": 0.1333, "name": "Fire_2" },
+					{ "time": 0.2, "name": "Fire_3" },
+					{ "time": 0.2667, "name": "Fire_4" },
+					{ "time": 0.3333, "name": "Fire_5" },
+					{ "time": 0.4, "name": "Fire_6" },
+					{ "time": 0.4667, "name": "Fire_7" },
+					{ "time": 0.5, "name": "Fire_01" }
+				]
+			}
+		}
+	}
+}
+}

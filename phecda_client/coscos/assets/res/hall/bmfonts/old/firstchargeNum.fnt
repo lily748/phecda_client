@@ -1,0 +1,16 @@
+info face="face" size=93
+common lineHeight=93 scaleW=294 scaleH=283 pages=1
+page id=0 file="firstchargeNum.png"
+chars count=12
+char id=48 x=56 y=95 width=53 height=93 xoffset=0 yoffset=0 xadvance=53 page=0 chnl=15
+char id=49 x=55 y=190 width=31 height=93 xoffset=0 yoffset=0 xadvance=31 page=0 chnl=15
+char id=50 x=111 y=95 width=53 height=93 xoffset=0 yoffset=0 xadvance=53 page=0 chnl=15
+char id=51 x=166 y=95 width=53 height=93 xoffset=0 yoffset=0 xadvance=53 page=0 chnl=15
+char id=52 x=71 y=0 width=56 height=93 xoffset=0 yoffset=0 xadvance=56 page=0 chnl=15
+char id=53 x=129 y=0 width=54 height=93 xoffset=0 yoffset=0 xadvance=54 page=0 chnl=15
+char id=54 x=185 y=0 width=54 height=93 xoffset=0 yoffset=0 xadvance=54 page=0 chnl=15
+char id=55 x=241 y=0 width=53 height=93 xoffset=0 yoffset=0 xadvance=53 page=0 chnl=15
+char id=56 x=241 y=95 width=53 height=93 xoffset=0 yoffset=0 xadvance=53 page=0 chnl=15
+char id=57 x=0 y=190 width=53 height=93 xoffset=0 yoffset=0 xadvance=53 page=0 chnl=15
+char id=36 x=0 y=95 width=54 height=93 xoffset=0 yoffset=0 xadvance=54 page=0 chnl=15
+char id=82 x=0 y=0 width=69 height=93 xoffset=0 yoffset=0 xadvance=69 page=0 chnl=15

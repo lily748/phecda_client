@@ -1,0 +1,66 @@
+{
+"skeleton": {
+	"hash": "mGlYr0VsBsW/tUo62ZjIMEEW83w",
+	"spine": "3.8.99",
+	"x": -104,
+	"y": -114,
+	"width": 208,
+	"height": 228,
+	"images": "./images/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "a3", "parent": "root" },
+	{ "name": "a4", "parent": "a3", "rotation": -8.7, "x": -112.14, "y": 36.35 }
+],
+"slots": [
+	{ "name": "a3", "bone": "a3", "attachment": "a3" },
+	{ "name": "a4s", "bone": "a4", "attachment": "a4s" },
+	{ "name": "a4", "bone": "a3", "color": "ffffff12", "attachment": "a3", "blend": "additive" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"a3": {
+				"a3": { "width": 208, "height": 228 }
+			},
+			"a4": {
+				"a3": { "width": 208, "height": 228 }
+			},
+			"a4s": {
+				"a4s": {
+					"type": "clipping",
+					"end": "a4s",
+					"vertexCount": 4,
+					"vertices": [ 16.19, 130.08, -102.75, -107.34, -73.1, -121.79, 46.89, 116.48 ],
+					"color": "ce3a3aff"
+				}
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"a4": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 1.7667, "name": "a3" },
+					{ "time": 3.3667, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"a4": {
+				"translate": [
+					{ "time": 2.4667 },
+					{ "time": 3.3333, "x": 233.21, "y": -97.96, "curve": "stepped" },
+					{ "time": 4, "x": 233.21, "y": -97.96 }
+				]
+			}
+		}
+	}
+}
+}

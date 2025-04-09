@@ -1,0 +1,26 @@
+{
+	"steps": [
+		{
+			"cmd": "arrow",
+			"desc": "award",
+			"delayTime": 0,
+			"path": "GameRoot/Canvas/Middle/GuideAward/public_guideAward/AwardBtn",
+			"module": "GuideAward",
+			"keyStep": true
+		},
+		{
+			"cmd": "arrow",
+			"desc": "click game",
+			"delayTime": 0,
+			"path": "GameRoot/Canvas/Low/Hall/public_hall/MainNode/Mask/PageRoot/Page1/GameListNode/GameList/view/content/UIRecycleItem_0/10000014",
+			"waitEventComplete": true
+		},
+		{
+			"cmd": "arrow",
+			"desc": "click room",
+			"delayTime": 500,
+			"path": "GameRoot/Canvas/Low/Hall/public_hall/ViceNode/ViceNode/RoomListNode/List/Line1/Item1",
+			"keyStep": true
+		}
+	]
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "主包",
+        "bundle": "main",
+        "relative": "",
+        "respaths": [
+            "src",
+            "jsb-adapter",
+            "assets/resources",
+            "assets/main"
+        ]
+    }
+   
+]

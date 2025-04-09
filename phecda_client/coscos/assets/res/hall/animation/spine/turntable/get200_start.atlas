@@ -1,0 +1,83 @@
+
+get200_start.png
+size: 1550,630
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+200
+  rotate: false
+  xy: 1210, 48
+  size: 119, 70
+  orig: 123, 73
+  offset: 2, 1
+  index: -1
+baox
+  rotate: false
+  xy: 1273, 353
+  size: 275, 275
+  orig: 303, 303
+  offset: 12, 12
+  index: -1
+free
+  rotate: true
+  xy: 760, 14
+  size: 207, 238
+  orig: 212, 243
+  offset: 2, 3
+  index: -1
+free2
+  rotate: true
+  xy: 1000, 39
+  size: 182, 91
+  orig: 188, 98
+  offset: 2, 4
+  index: -1
+ha2
+  rotate: true
+  xy: 2, 2
+  size: 626, 756
+  orig: 634, 780
+  offset: 1, 21
+  index: -1
+jinb1
+  rotate: true
+  xy: 1331, 32
+  size: 86, 89
+  orig: 90, 92
+  offset: 2, 2
+  index: -1
+jinb2
+  rotate: false
+  xy: 1422, 69
+  size: 49, 49
+  orig: 54, 53
+  offset: 1, 2
+  index: -1
+light01
+  rotate: false
+  xy: 760, 223
+  size: 357, 405
+  orig: 385, 438
+  offset: 7, 17
+  index: -1
+light3
+  rotate: false
+  xy: 1093, 33
+  size: 115, 106
+  orig: 122, 114
+  offset: 4, 4
+  index: -1
+lightbg
+  rotate: false
+  xy: 1273, 120
+  size: 264, 231
+  orig: 272, 239
+  offset: 4, 5
+  index: -1
+zi
+  rotate: true
+  xy: 1119, 141
+  size: 487, 152
+  orig: 491, 155
+  offset: 2, 2
+  index: -1

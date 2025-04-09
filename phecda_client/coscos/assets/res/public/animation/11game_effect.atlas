@@ -1,0 +1,27 @@
+
+11game_effect.png
+size: 475,111
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+11game
+  rotate: true
+  xy: 330, 2
+  size: 107, 110
+  orig: 109, 113
+  offset: 1, 3
+  index: -1
+11game2
+  rotate: false
+  xy: 2, 7
+  size: 326, 102
+  orig: 333, 115
+  offset: 4, 9
+  index: -1
+light1
+  rotate: false
+  xy: 442, 77
+  size: 31, 32
+  orig: 43, 42
+  offset: 4, 3
+  index: -1

@@ -1,0 +1,125 @@
+{
+"skeleton": {
+	"hash": "JsH++6MBmQ+a9bKyMPv+0RedWJ8",
+	"spine": "3.8.99",
+	"x": -32.16,
+	"y": -26.37,
+	"width": 64,
+	"height": 55,
+	"images": "./images/",
+	"audio": "D:/dp工作/财星项目/3.1.720项目动效/frist_effect/images"
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "frist_effect3", "parent": "root", "length": 25.33, "rotation": 90.91, "x": 0.41, "y": -16.89 },
+	{ "name": "frist_effect7", "parent": "frist_effect3", "length": 8.84, "rotation": -0.91, "x": 30.56, "y": 0.32 },
+	{ "name": "bone", "parent": "root", "length": 7.03, "rotation": 14.04, "x": 12.59, "y": -16.36 },
+	{ "name": "frist_effect4", "parent": "root", "length": 7.96, "rotation": 164.48, "x": -17.94, "y": -15.79 },
+	{ "name": "frist_effect6", "parent": "frist_effect3", "x": 30.36, "y": -12.4 },
+	{ "name": "frist_effect8", "parent": "frist_effect3", "x": 29.97, "y": -7.7, "scaleX": 0.8619, "scaleY": 0.8619 }
+],
+"slots": [
+	{ "name": "frist_effect1", "bone": "frist_effect3", "attachment": "frist_effect1" },
+	{ "name": "frist_effect3", "bone": "bone", "attachment": "frist_effect3" },
+	{ "name": "frist_effect4", "bone": "frist_effect4", "attachment": "frist_effect4" },
+	{ "name": "frist_effect10", "bone": "frist_effect8", "blend": "additive" },
+	{ "name": "frist_effect7", "bone": "frist_effect7", "attachment": "frist_effect7" },
+	{ "name": "frist_effect6", "bone": "frist_effect6", "blend": "additive" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"frist_effect1": {
+				"frist_effect1": { "x": 15.52, "y": 0.32, "rotation": -90.91, "width": 64, "height": 46 }
+			},
+			"frist_effect3": {
+				"frist_effect3": { "x": 3.28, "y": -0.32, "rotation": -14.04, "width": 28, "height": 21 }
+			},
+			"frist_effect4": {
+				"frist_effect4": { "x": 0.53, "y": 0.75, "rotation": -164.48, "width": 27, "height": 18 }
+			},
+			"frist_effect6": {
+				"frist_effect6": { "x": 1.21, "y": -1.09, "rotation": -90.91, "width": 40, "height": 34 }
+			},
+			"frist_effect7": {
+				"frist_effect7": { "x": 2.46, "y": -0.23, "rotation": -90, "width": 48, "height": 25 }
+			},
+			"frist_effect10": {
+				"frist_effect6": { "x": 1.21, "y": -1.09, "rotation": -90.91, "width": 40, "height": 34 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"frist_effect6": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.5, "color": "ffffff00" },
+					{ "time": 0.5667, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.6667, "color": "ffffffff" },
+					{ "time": 0.7667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "name": "frist_effect6" }
+				]
+			},
+			"frist_effect10": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.3, "color": "ffffffdd" },
+					{ "time": 0.6667, "color": "ffffff00" },
+					{ "time": 0.9667, "color": "ffffffdd" },
+					{ "time": 1.3333, "color": "ffffff00" },
+					{ "time": 1.6667, "color": "ffffffdd" },
+					{ "time": 2, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "name": "frist_effect6" }
+				]
+			}
+		},
+		"bones": {
+			"frist_effect3": {
+				"scale": [
+					{ "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.2333, "x": 0.953, "y": 1.035, "curve": "stepped" },
+					{ "time": 0.3667, "x": 0.953, "y": 1.035, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.4667, "x": 1.064, "y": 0.973, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.5667, "x": 0.989, "y": 1.014, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.7 }
+				]
+			},
+			"frist_effect7": {
+				"rotate": [
+					{ "time": 0.5, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.6, "angle": 15.43, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.8667 }
+				],
+				"translate": [
+					{ "time": 0.4667, "curve": 0, "c2": 0.09, "c3": 0.75 },
+					{ "time": 0.5667, "x": 4.89, "y": 0.89, "curve": 0.25, "c3": 0.75 },
+					{ "time": 0.8333 }
+				]
+			},
+			"frist_effect6": {
+				"scale": [
+					{ "time": 0.5, "curve": 0.335, "c2": 0.34, "c3": 0.67, "c4": 0.68 },
+					{
+						"time": 0.6,
+						"x": 1.503,
+						"y": 1.503,
+						"curve": 0.345,
+						"c2": 0.37,
+						"c3": 0.683,
+						"c4": 0.72
+					},
+					{ "time": 0.7667 }
+				]
+			}
+		}
+	}
+}
+}

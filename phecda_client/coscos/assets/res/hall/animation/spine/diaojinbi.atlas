@@ -1,0 +1,97 @@
+
+diaojinbi.png
+size: 256,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+图层 20
+  rotate: false
+  xy: 163, 340
+  size: 60, 90
+  orig: 60, 90
+  offset: 0, 0
+  index: -1
+图层 20 拷贝
+  rotate: false
+  xy: 163, 432
+  size: 92, 54
+  orig: 92, 54
+  offset: 0, 0
+  index: -1
+图层 19
+  rotate: false
+  xy: 1, 274
+  size: 94, 73
+  orig: 94, 73
+  offset: 0, 0
+  index: -1
+图层 19 拷贝
+  rotate: false
+  xy: 97, 340
+  size: 64, 96
+  orig: 64, 96
+  offset: 0, 0
+  index: -1
+图层 19 拷贝 8
+  rotate: false
+  xy: 97, 274
+  size: 97, 64
+  orig: 97, 64
+  offset: 0, 0
+  index: -1
+图层 19 拷贝 7
+  rotate: false
+  xy: 1, 92
+  size: 80, 91
+  orig: 80, 91
+  offset: 0, 0
+  index: -1
+图层 19 拷贝 6
+  rotate: false
+  xy: 83, 181
+  size: 80, 91
+  orig: 80, 91
+  offset: 0, 0
+  index: -1
+图层 19 拷贝 5
+  rotate: false
+  xy: 184, 1
+  size: 69, 95
+  orig: 69, 95
+  offset: 0, 0
+  index: -1
+图层 19 拷贝 4
+  rotate: false
+  xy: 165, 181
+  size: 81, 89
+  orig: 81, 89
+  offset: 0, 0
+  index: -1
+图层 19 拷贝 3
+  rotate: false
+  xy: 1, 438
+  size: 97, 63
+  orig: 97, 63
+  offset: 0, 0
+  index: -1
+图层 19 拷贝 2
+  rotate: false
+  xy: 97, 1
+  size: 85, 87
+  orig: 85, 87
+  offset: 0, 0
+  index: -1
+图层 18
+  rotate: false
+  xy: 97, 90
+  size: 82, 89
+  orig: 82, 89
+  offset: 0, 0
+  index: -1
+图层 17
+  rotate: false
+  xy: 1, 1
+  size: 94, 89
+  orig: 94, 89
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,20 @@
+
+rebate_effect.png
+size: 282,236
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+x2
+  rotate: false
+  xy: 2, 193
+  size: 41, 41
+  orig: 49, 45
+  offset: 4, 1
+  index: -1
+z
+  rotate: true
+  xy: 45, 2
+  size: 232, 235
+  orig: 254, 257
+  offset: 11, 11
+  index: -1

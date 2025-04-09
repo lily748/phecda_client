@@ -1,0 +1,9 @@
+/library/
+/temp/
+/build/
+/profiles/
+/settings/
+/local/
+bitmap-font
+out
+extensions/hotupdate/config/localCache.json

@@ -1,0 +1,48 @@
+
+code_effect.png
+size: 594,124
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+l1
+  rotate: false
+  xy: 589, 19
+  size: 3, 103
+  orig: 3, 103
+  offset: 0, 0
+  index: -1
+l2
+  rotate: true
+  xy: 2, 10
+  size: 3, 136
+  orig: 3, 136
+  offset: 0, 0
+  index: -1
+l3
+  rotate: false
+  xy: 561, 4
+  size: 13, 13
+  orig: 15, 15
+  offset: 1, 1
+  index: -1
+l4
+  rotate: false
+  xy: 561, 96
+  size: 26, 26
+  orig: 28, 28
+  offset: 1, 1
+  index: -1
+light1
+  rotate: true
+  xy: 435, 2
+  size: 120, 124
+  orig: 144, 146
+  offset: 7, 6
+  index: -1
+t1
+  rotate: false
+  xy: 2, 15
+  size: 431, 107
+  orig: 433, 109
+  offset: 1, 1
+  index: -1

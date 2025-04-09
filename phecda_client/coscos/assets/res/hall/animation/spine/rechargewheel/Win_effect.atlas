@@ -1,0 +1,27 @@
+
+Win_effect.png
+size: 580,171
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+light1
+  rotate: true
+  xy: 2, 13
+  size: 156, 240
+  orig: 156, 241
+  offset: 0, 1
+  index: -1
+lighta
+  rotate: false
+  xy: 415, 3
+  size: 163, 166
+  orig: 169, 172
+  offset: 1, 0
+  index: -1
+lightb
+  rotate: true
+  xy: 244, 2
+  size: 167, 169
+  orig: 169, 172
+  offset: 1, 2
+  index: -1

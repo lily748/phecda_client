@@ -1,0 +1,27 @@
+
+zhong_effect.png
+size: 296,227
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+an
+  rotate: false
+  xy: 279, 201
+  size: 7, 7
+  orig: 10, 9
+  offset: 2, 1
+  index: -1
+liang
+  rotate: false
+  xy: 279, 210
+  size: 15, 15
+  orig: 16, 16
+  offset: 1, 0
+  index: -1
+light1s
+  rotate: true
+  xy: 2, 2
+  size: 223, 275
+  orig: 229, 282
+  offset: 3, 5
+  index: -1

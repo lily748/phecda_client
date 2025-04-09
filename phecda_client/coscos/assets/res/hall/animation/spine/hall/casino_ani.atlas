@@ -1,0 +1,90 @@
+
+casino_ani.png
+size: 299,138
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+022s
+  rotate: true
+  xy: 140, 53
+  size: 83, 74
+  orig: 100, 75
+  offset: 6, 0
+  index: -1
+c1
+  rotate: false
+  xy: 63, 32
+  size: 12, 11
+  orig: 12, 11
+  offset: 0, 0
+  index: -1
+c2
+  rotate: false
+  xy: 77, 36
+  size: 15, 7
+  orig: 15, 8
+  offset: 0, 0
+  index: -1
+c3
+  rotate: false
+  xy: 134, 10
+  size: 33, 33
+  orig: 36, 36
+  offset: 2, 1
+  index: -1
+c4
+  rotate: true
+  xy: 216, 58
+  size: 14, 13
+  orig: 14, 13
+  offset: 0, 0
+  index: -1
+casino1
+  rotate: true
+  xy: 63, 45
+  size: 91, 75
+  orig: 93, 77
+  offset: 1, 1
+  index: -1
+casino2
+  rotate: false
+  xy: 216, 74
+  size: 81, 62
+  orig: 83, 64
+  offset: 1, 1
+  index: -1
+casinozi
+  rotate: false
+  xy: 32, 4
+  size: 100, 26
+  orig: 102, 28
+  offset: 1, 1
+  index: -1
+light5
+  rotate: false
+  xy: 2, 32
+  size: 59, 104
+  orig: 64, 112
+  offset: 3, 4
+  index: -1
+lizi
+  rotate: false
+  xy: 2, 2
+  size: 28, 28
+  orig: 31, 31
+  offset: 1, 2
+  index: -1
+zhongxin
+  rotate: false
+  xy: 231, 9
+  size: 63, 63
+  orig: 65, 65
+  offset: 1, 1
+  index: -1
+zhongxin_l
+  rotate: true
+  xy: 169, 3
+  size: 48, 47
+  orig: 49, 47
+  offset: 0, 0
+  index: -1

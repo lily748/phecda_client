@@ -1,0 +1,62 @@
+
+box_effect.png
+size: 453,495
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1E8
+  rotate: false
+  xy: 2, 256
+  size: 281, 237
+  orig: 281, 237
+  offset: 0, 0
+  index: -1
+box3
+  rotate: true
+  xy: 285, 305
+  size: 188, 165
+  orig: 188, 217
+  offset: 0, 0
+  index: -1
+box3s
+  rotate: true
+  xy: 285, 152
+  size: 151, 166
+  orig: 151, 166
+  offset: 0, 0
+  index: -1
+light1
+  rotate: true
+  xy: 2, 49
+  size: 205, 206
+  orig: 212, 209
+  offset: 3, 2
+  index: -1
+light2
+  rotate: true
+  xy: 210, 12
+  size: 138, 120
+  orig: 164, 123
+  offset: 11, 1
+  index: -1
+light3
+  rotate: false
+  xy: 210, 212
+  size: 42, 42
+  orig: 51, 51
+  offset: 4, 5
+  index: -1
+light4
+  rotate: false
+  xy: 254, 227
+  size: 27, 27
+  orig: 32, 33
+  offset: 2, 3
+  index: -1
+sfgs
+  rotate: true
+  xy: 332, 2
+  size: 148, 93
+  orig: 158, 93
+  offset: 2, 0
+  index: -1

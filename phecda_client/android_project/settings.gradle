@@ -1,0 +1,2 @@
+include ':libcocos', ':libservice',':channel:com.casino.brl'
+rootProject.name = "channel"

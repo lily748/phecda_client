@@ -1,0 +1,133 @@
+package carsh;
+
+// 协议定义
+enum Carsh_GameMessageClassID {
+	CarshSceneNtfID=10001;			// 游戏场景数据
+
+	CarshBetNtfID=10002;			// 游戏下注通知
+	CarshStartNtfID=10003;			// 开始通知
+	CarshEndNtfID=10004;			// 游戏结束通知
+
+	CarshBetRankReqID=10005;		// 下注排行信息请求
+	CarshBetRankAckID=10006;		// 下注排行信息
+
+	CarshBetReqID=10007;			// 下注操作
+	CarshBetAckID=10008;			// 下注操作结果
+
+	CarshOutReqID=10009;			// 回撤操作
+	CarshOutAckID=10010;			// 回撤操作结果
+
+	CarshAutoOutReqID = 10011;		// 自动回撤
+	CarshAutoOutAckID = 10012;		// 自动回撤结果
+};
+
+// 游戏状态定义
+enum Carsh_State {
+	Carsh_Bet = 1;		// 下注
+	Carsh_Start = 2;	// 开始
+	Carsh_End = 3;		// 结束
+}
+
+// 错误信息
+enum Carsh_Error {
+	Code_Success		= 0;	// 成功
+	Code_State			= 1;	// 状态错误
+	Code_BetGold		= 2;	// 投注金币不足
+	Code_AlreadyBet		= 3;	// 已投过注
+}
+
+// 场景数据
+message Carsh_SceneNtf{
+	message MulItem {
+		optional int32 SecondMul		= 1;	// 每秒上涨的倍数 100 = 1倍
+		optional int32 MilliSecond		= 2;	// 上涨多少毫秒
+	};
+	optional Carsh_State State 		= 1;	// 当前状态
+	optional int64 StateRemain		= 2;	// 状态剩余时间
+	repeated int64 BetChip			= 3;	// 可下注各类型筹码值
+	repeated MulItem MulConf		= 4;	// 倍数上涨配置
+	optional int32 BetTime			= 5;	// 下注时间
+	optional int64 BetCount			= 6;	// 已下注筹码值
+	optional int32 AutoCarshOut		= 7;	// 自动出货倍数
+	optional int32 MaxRecordCount	= 8;	// 最大的记录数据
+	repeated int32 Record			= 9;	// 50局的记录数据
+	optional int32 OnlineCount		= 10;	// 房间内的真实在线人数
+	optional Carsh_BetRankAck RankInfo = 11;// 下注排行信息
+};
+
+
+// 开始下注通知
+message Carsh_BetNtf{
+	optional int32 OnlineCount		= 1;	// 房间内的真实在线人数
+};
+
+// 开始通知
+message Carsh_StartNtf{
+	message RobotOutItem {
+		optional string Name 	= 1;
+		optional int32 OutMul	= 2;
+		optional bool IsAuto	= 3;	// 是否是自动撤回
+	};
+	optional int32 EndMul 		= 1;	// 火箭预计结束的倍数
+	optional int32 AddMul		= 2;	// 玩家提前回撤增加的火箭飞行倍数
+	optional int64 StartTime	= 3;	// 火箭开始时间搓
+	repeated RobotOutItem RobotOutList = 4;	// 机器人回撤数组
+};
+
+// 倍数修改通知
+message Carsh_ModMulNtf {
+	optional int32 EndMul 		= 1;	// 火箭预计结束的倍数
+}
+
+// 结束通知
+message Carsh_EndNtf{
+	optional int64 LoseWin 		= 1;	// 输赢金币
+};
+
+// 下注排行请求
+message Carsh_BetRankReq {
+
+}
+
+// 下注排行请求结果
+message Carsh_BetRankAck {
+	message Item {
+		optional string Name 			= 1; // 玩家名字
+		optional int64 BetNum 			= 2; // 下注数量
+	};
+	optional int64 TotalBet 	= 1;		// 总下注
+	repeated Item RankList 		= 2;		// 投注排行信息
+}
+
+// 玩家下注操作
+message Carsh_BetReq {
+	optional int64 BetNum 	= 1;		// 玩家投注
+}
+
+// 玩家下注结果
+message Carsh_BetAck {
+	optional Carsh_Error Code	= 1;		// 错误信息
+	optional int64 TotalBet 	= 2;		// 总下注
+}
+
+// 玩家回撤操作
+message Carsh_OutReq {
+	optional int64 OutTime 		= 1;		// 回撤时间搓(毫秒)
+}
+
+// 玩家回撤结果(自动回撤结果也走这里)
+message Carsh_OutAck {
+	optional Carsh_Error Code	= 1; 
+	optional int32	OutMul 		= 2;	// 回撤后的倍数
+	optional bool IsAuto		= 3;	// 是否是自动撤回
+}
+
+// 设置自动回撤请求
+message Carsh_AutoOutReq {
+	optional int32 OutMul 	= 1;	// 回撤倍数
+}
+
+message Carsh_AutoOutAck {
+	optional Carsh_Error Code	= 1; 
+	
+}

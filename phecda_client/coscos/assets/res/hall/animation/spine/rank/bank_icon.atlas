@@ -1,0 +1,69 @@
+
+bank_icon.png
+size: 268,135
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+010
+  rotate: false
+  xy: 2, 25
+  size: 110, 108
+  orig: 114, 110
+  offset: 2, 1
+  index: -1
+Daily Free
+  rotate: false
+  xy: 114, 13
+  size: 97, 28
+  orig: 99, 30
+  offset: 1, 1
+  index: -1
+af5
+  rotate: false
+  xy: 2, 2
+  size: 99, 21
+  orig: 101, 23
+  offset: 1, 1
+  index: -1
+dai1
+  rotate: false
+  xy: 213, 6
+  size: 31, 27
+  orig: 32, 27
+  offset: 1, 0
+  index: -1
+dai2
+  rotate: false
+  xy: 213, 35
+  size: 32, 46
+  orig: 34, 46
+  offset: 0, 0
+  index: -1
+jiangb
+  rotate: false
+  xy: 114, 43
+  size: 97, 90
+  orig: 102, 93
+  offset: 1, 1
+  index: -1
+jin10
+  rotate: true
+  xy: 246, 13
+  size: 20, 19
+  orig: 22, 22
+  offset: 1, 2
+  index: -1
+jin11
+  rotate: true
+  xy: 247, 61
+  size: 20, 19
+  orig: 22, 21
+  offset: 1, 1
+  index: -1
+outd
+  rotate: true
+  xy: 213, 83
+  size: 50, 46
+  orig: 64, 48
+  offset: 8, 1
+  index: -1
