@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">4pGame</string>
+    <string name="app_name" translatable="false">C1Games</string>
     <string name="facebook_app_id" translatable="false">294123828245922618</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb294123828245922618</string>
     <string name="facebook_client_token" translatable="false">84123091f721cf14e6366bd061026a16af</string>

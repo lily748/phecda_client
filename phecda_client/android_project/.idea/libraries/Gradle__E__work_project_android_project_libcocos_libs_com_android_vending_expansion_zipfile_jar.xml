@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: E./work/project/android_project/libcocos/libs/com.android.vending.expansion.zipfile.jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libcocos/libs/com.android.vending.expansion.zipfile.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

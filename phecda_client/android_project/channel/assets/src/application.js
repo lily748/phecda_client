@@ -29,14 +29,6 @@ System.register([], function (_export, _context) {
         return loadSettingsJson(cc);
       }).then(() => {
         settings = window._CCSettings;
-
-        if (cc.sys.isBrowser && (cc.sys.os == "Windows" || cc.sys.os == "OS X")) {
-          //添加代码 PC浏览器 插屏和logo 显示比例为1
-          if (settings && settings.splashScreen) {
-            settings.splashScreen.displayRatio = 1;
-          }
-        }
-
         return initializeGame(cc, settings, findCanvas).then(() => {
           if (!settings.renderPipeline) return cc.game.run();
         }).then(() => {
@@ -168,7 +160,7 @@ System.register([], function (_export, _context) {
     const launchScene = settings.launchScene; // load scene
 
     cc.director.loadScene(launchScene, null, function () {
-      cc.view.setDesignResolutionSize(750, 1334, 4);
+      cc.view.setDesignResolutionSize(960, 640, 4);
       console.log(`Success to load scene: ${launchScene}`);
     });
   }

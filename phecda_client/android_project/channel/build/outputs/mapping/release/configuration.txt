@@ -1,0 +1,3083 @@
+# The proguard configuration file for the following section is D:\gerenCang\phecda_client\android_project\channel\build\intermediates\proguard-files\proguard-android.txt-4.1.0
+# This is a configuration file for ProGuard.
+# http://proguard.sourceforge.net/index.html#manual/usage.html
+#
+# Starting with version 2.2 of the Android plugin for Gradle, this file is distributed together with
+# the plugin and unpacked at build-time. The files in $ANDROID_HOME are no longer maintained and
+# will be ignored by new version of the Android plugin for Gradle.
+
+# Optimization is turned off by default. Dex does not like code run
+# through the ProGuard optimize steps (and performs some
+# of these optimizations on its own).
+# Note that if you want to enable optimization, you cannot just
+# include optimization flags in your own project configuration file;
+# instead you will need to point to the
+# "proguard-android-optimize.txt" file instead of this one from your
+# project.properties file.
+-dontoptimize
+
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-verbose
+
+# Preserve some attributes that may be required for reflection.
+-keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod
+
+-keep public class com.google.vending.licensing.ILicensingService
+-keep public class com.android.vending.licensing.ILicensingService
+-keep public class com.google.android.vending.licensing.ILicensingService
+-dontnote com.android.vending.licensing.ILicensingService
+-dontnote com.google.vending.licensing.ILicensingService
+-dontnote com.google.android.vending.licensing.ILicensingService
+
+# For native methods, see http://proguard.sourceforge.net/manual/examples.html#native
+-keepclasseswithmembernames,includedescriptorclasses class * {
+    native <methods>;
+}
+
+# Keep setters in Views so that animations can still work.
+-keepclassmembers public class * extends android.view.View {
+    void set*(***);
+    *** get*();
+}
+
+# We want to keep methods in Activity that could be used in the XML attribute onClick.
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+
+# For enumeration classes, see http://proguard.sourceforge.net/manual/examples.html#enumerations
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keepclassmembers class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+
+# Preserve annotated Javascript interface methods.
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+
+# The support libraries contains references to newer platform versions.
+# Don't warn about those in case this app is linking against an older
+# platform version. We know about them, and they are safe.
+-dontnote android.support.**
+-dontnote androidx.**
+-dontwarn android.support.**
+-dontwarn androidx.**
+
+# This class is deprecated, but remains for backward compatibility.
+-dontwarn android.util.FloatMath
+
+# Understand the @Keep support annotation.
+-keep class android.support.annotation.Keep
+-keep class androidx.annotation.Keep
+
+-keep @android.support.annotation.Keep class * {*;}
+-keep @androidx.annotation.Keep class * {*;}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <init>(...);
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <init>(...);
+}
+
+# These classes are duplicated between android.jar and org.apache.http.legacy.jar.
+-dontnote org.apache.http.**
+-dontnote android.net.http.**
+
+# These classes are duplicated between android.jar and core-lambda-stubs.jar.
+-dontnote java.lang.invoke.**
+
+# End of content from D:\gerenCang\phecda_client\android_project\channel\build\intermediates\proguard-files\proguard-android.txt-4.1.0
+# The proguard configuration file for the following section is D:\gerenCang\phecda_client\android_project\channel\com.casino.brl\proguard-rules.pro
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in E:\developSoftware\Android\SDK/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the proguardFiles
+# directive in build.gradle.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# Proguard Cocos2d-x-lite for release
+-keep public class com.cocos.** { *; }
+-dontwarn com.cocos.**
+
+# Proguard Apache HTTP for release
+-keep class org.apache.http.** { *; }
+-dontwarn org.apache.http.**
+
+# Proguard okhttp for release
+-keep class okhttp3.** { *; }
+-dontwarn okhttp3.**
+
+-keep class okio.** { *; }
+-dontwarn okio.**
+
+# Proguard Android Webivew for release. you can comment if you are not using a webview
+-keep public class android.net.http.SslError
+-keep public class android.webkit.WebViewClient
+
+-keep class com.adjust.sdk.**{ *; }
+-keep class com.google.android.gms.common.ConnectionResult {
+    int SUCCESS;
+}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient {
+    com.google.android.gms.ads.identifier.AdvertisingIdClient$Info getAdvertisingIdInfo(android.content.Context);
+}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info {
+    java.lang.String getId();
+    boolean isLimitAdTrackingEnabled();
+}
+-keep public class com.android.installreferrer.**{ *; }
+-keep public class com.adjust.sdk.**{ *; }
+
+-keep class com.appsflyer. { *; }
+-keep class kotlin.jvm.internal. { *; }
+
+
+-dontwarn android.webkit.WebView
+-dontwarn android.net.http.SslError
+-dontwarn android.webkit.WebViewClient
+
+# End of content from D:\gerenCang\phecda_client\android_project\channel\com.casino.brl\proguard-rules.pro
+# The proguard configuration file for the following section is D:\gerenCang\phecda_client\android_project\channel\build\intermediates\aapt_proguard_file\release\aapt_rules.txt
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+-keep class com.adjust.sdk.AdjustReferrerReceiver { <init>(); }
+-keep class com.cocos.game.AppActivity { <init>(); }
+-keep class com.cocos.lib.CocosEditBoxActivity { <init>(); }
+-keep class com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver { <init>(); }
+-keep class com.facebook.CurrentAccessTokenExpirationBroadcastReceiver { <init>(); }
+-keep class com.facebook.CustomTabActivity { <init>(); }
+-keep class com.facebook.CustomTabMainActivity { <init>(); }
+-keep class com.facebook.FacebookActivity { <init>(); }
+-keep class com.facebook.internal.FacebookInitProvider { <init>(); }
+-keep class android.widget.Space { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.app.AlertController$RecycleListView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.view.menu.ActionMenuItemView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.view.menu.ExpandedMenuView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.view.menu.ListMenuItemView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.ActionBarContainer { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.ActionBarContextView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.ActionBarOverlayLayout { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.ActionMenuView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.ActivityChooserView$InnerLayout { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.AlertDialogLayout { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.AppCompatImageView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.ButtonBarLayout { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.ContentFrameLayout { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.DialogTitle { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.FitWindowsFrameLayout { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.FitWindowsLinearLayout { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.SearchView$SearchAutoComplete { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.Toolbar { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.appcompat.widget.ViewStubCompat { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.browser.browseractions.BrowserActionsFallbackMenuView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.cardview.widget.CardView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.core.widget.NestedScrollView { <init>(android.content.Context, android.util.AttributeSet); }
+
+
+# End of content from D:\gerenCang\phecda_client\android_project\channel\build\intermediates\aapt_proguard_file\release\aapt_rules.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\db626b4442791997c1a217fd1719537c\transformed\rules\lib\META-INF\proguard\okhttp3.pro
+# JSR 305 annotations are for embedding nullability information.
+-dontwarn javax.annotation.**
+
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-keepnames class org.cocos2dx.okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# OkHttp platform used only on JVM and when Conscrypt dependency is available.
+-dontwarn org.cocos2dx.okhttp3.internal.platform.ConscryptPlatform
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\db626b4442791997c1a217fd1719537c\transformed\rules\lib\META-INF\proguard\okhttp3.pro
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\99a97eabc305db295b8dffbba477f3e1\transformed\jetified-facebook-login-18.0.3\proguard.txt
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-keepclassmembers class * implements java.io.Serializable {
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+-keepnames class com.facebook.FacebookActivity
+-keepnames class com.facebook.CustomTabActivity
+
+-keep class com.facebook.login.Login
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\99a97eabc305db295b8dffbba477f3e1\transformed\jetified-facebook-login-18.0.3\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\f04e944092914323b685f0e82dfef209\transformed\jetified-facebook-common-18.0.3\proguard.txt
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-keepclassmembers class * implements java.io.Serializable {
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+-keepnames class com.facebook.FacebookActivity
+-keepnames class com.facebook.CustomTabActivity
+
+-keep class com.facebook.common.Common
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\f04e944092914323b685f0e82dfef209\transformed\jetified-facebook-common-18.0.3\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\b0eff955798299b5154f7037faf2964a\transformed\jetified-facebook-core-18.0.3\proguard.txt
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-keepclassmembers,allowoptimization enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keepclassmembers class * implements java.io.Serializable {
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+-keepnames class com.facebook.FacebookActivity
+-keepnames class com.facebook.CustomTabActivity
+
+-keepnames class com.android.installreferrer.api.InstallReferrerClient
+-keepnames class com.android.installreferrer.api.InstallReferrerStateListener
+-keepnames class com.android.installreferrer.api.ReferrerDetails
+
+-keep class com.facebook.core.Core
+
+# keep class names and method names used by reflection by InAppPurchaseEventManager
+-keep public class com.android.vending.billing.IInAppBillingService {
+    public <methods>;
+}
+-keep public class com.android.vending.billing.IInAppBillingService$Stub {
+    public <methods>;
+}
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\b0eff955798299b5154f7037faf2964a\transformed\jetified-facebook-core-18.0.3\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\3d0aca96fb7f4d794de343f7767d82c8\transformed\jetified-af-android-sdk-6.13.1\proguard.txt
+
+
+
+-keeppackagenames com.appsflyer.internal,com.appsflyer
+-dontwarn com.android.installreferrer,com.appsflyer.**
+
+
+
+
+# https://support.appsflyer.com/hc/en-us/articles/207032126-AppsFlyer-SDK-Integration-Android#11-known-issues
+# Also will make it easier to investigate stack traces coming from clients
+-keep class com.appsflyer.** {
+    <fields>;    <methods>;
+}
+
+-keep public class com.android.installreferrer.** {
+    <fields>;    <methods>;
+}
+
+-keep class com.appsflyer.internal.AFa1vSDK$2839$4 {
+    <init>(java.lang.Object);
+}
+
+-keep class com.appsflyer.internal.AFa1vSDK$2839$AFa1zSDK {
+    com.appsflyer.internal.AFa1vSDK$2839$AFa1zSDK AFInAppEventParameterName;    com.appsflyer.internal.AFa1vSDK$2839$AFa1zSDK AFKeystoreWrapper;    java.lang.String AFInAppEventType;}
+
+-keep class com.appsflyer.internal.AFa1vSDK$2839$AFa1uSDK {
+    com.appsflyer.internal.AFa1vSDK$2839$AFa1uSDK AFInAppEventParameterName;    com.appsflyer.internal.AFa1vSDK$2839$AFa1uSDK AFInAppEventType;    java.lang.String AFKeystoreWrapper;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFa1tSDK {
+    <init>();
+}
+
+-keep class com.appsflyer.internal.AFa1pSDK {
+    int registerClient;    com.appsflyer.internal.AFa1pSDK AFInAppEventType(java.lang.String,java.lang.Object);
+    java.util.Map valueOf();
+    boolean AFInAppEventParameterName();
+    boolean registerClient();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFa1pSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFa1oSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFa1qSDK {
+    <init>();
+}
+
+-keep class com.appsflyer.internal.AFa1lSDK$31399$5 {
+    <init>();
+}
+
+-keep class com.appsflyer.internal.AFa1jSDK$23283$AFa1vSDK {
+    com.appsflyer.internal.AFa1jSDK$23283$AFa1vSDK valueOf;    com.appsflyer.internal.AFa1jSDK$23283$AFa1vSDK AFKeystoreWrapper;    com.appsflyer.internal.AFa1jSDK$23283$AFa1vSDK AFInAppEventType;    com.appsflyer.internal.AFa1jSDK$23283$AFa1vSDK AFInAppEventParameterName;    com.appsflyer.internal.AFa1jSDK$23283$AFa1vSDK values;    com.appsflyer.internal.AFa1jSDK$23283$AFa1vSDK d;}
+
+-keep class com.appsflyer.AFLogger {
+    com.appsflyer.AFLogger INSTANCE;    void afRDLog(java.lang.String);
+    void afDebugLog(java.lang.String);
+    void afErrorLogForExcManagerOnly(java.lang.String,java.lang.Throwable);
+    void afErrorLog(java.lang.String,java.lang.Throwable,boolean);
+    void afWarnLog(java.lang.String);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.AFLogger {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.AFLogger$1 {
+    void values(com.appsflyer.internal.AFg1hSDK);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.AFLogger$3 {
+    void valueOf(com.appsflyer.internal.AFg1hSDK);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.AFLogger$5 {
+    java.util.concurrent.ExecutorService AFInAppEventType();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.AFLogger$5 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.AFLogger$4 {
+    void AFKeystoreWrapper(com.appsflyer.internal.AFg1hSDK);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.AFLogger$2 {
+    void valueOf(com.appsflyer.internal.AFg1hSDK);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.AFLogger$6 {
+    java.util.Set values();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.AFLogger$6 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.AFLogger$8 {
+    void values(com.appsflyer.internal.AFg1hSDK);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.AFLogger$9 {
+    void values(com.appsflyer.internal.AFg1hSDK);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFb1ySDK {
+    com.appsflyer.internal.AFb1ySDK$AFa1zSDK AFa1zSDK;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFa1aSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.AFVersionDeclaration {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFb1zSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFb1rSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFb1uSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.AppsFlyerConsent$Companion {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFb1tSDK {
+    <init>();
+}
+
+-keepclassmembers,allowshrinking,allowobfuscation class com.appsflyer.internal.AFb1tSDK {
+    void AFKeystoreWrapper();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.CreateOneLinkHttpTask {
+    <init>();
+}
+
+-keep class com.appsflyer.internal.AFb1mSDK {
+    java.lang.String AFInAppEventType(java.lang.String,java.lang.String);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFb1mSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFb1kSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFb1lSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFb1hSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFb1cSDK {
+    <init>();
+}
+
+-keepclassmembers,allowshrinking,allowobfuscation class com.appsflyer.internal.AFb1aSDK {
+    void AFLogger();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFb1gSDK {
+    com.appsflyer.internal.AFb1gSDK INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFc1vSDK {
+    <init>();
+}
+
+-keep class com.appsflyer.internal.AFc1rSDK {
+    boolean AFInAppEventType(java.lang.String);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFc1rSDK {
+    <init>();
+}
+
+-keep class com.appsflyer.internal.AFc1uSDK {
+    java.lang.String[] d;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFc1kSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFc1qSDK {
+    <init>(boolean,com.appsflyer.deeplink.DeepLink,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFc1qSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFc1jSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFc1pSDK {
+    com.appsflyer.internal.AFc1pSDK$AFa1ySDK AFa1ySDK;    <init>(java.util.Map,com.appsflyer.internal.AFc1oSDK,int,kotlin.jvm.internal.DefaultConstructorMarker);
+    <init>(java.util.Map,com.appsflyer.internal.AFc1oSDK,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFc1pSDK$AFa1ySDK {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFa1nSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFc1aSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFc1dSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1xSDK {
+    com.appsflyer.internal.AFd1xSDK$AFa1ySDK AFa1ySDK;}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1tSDK
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFd1qSDK {
+    <init>();
+}
+
+-keepclassmembers,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1rSDK {
+    void AFInAppEventParameterName();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFd1rSDK$AFa1tSDK {
+    <init>();
+}
+
+-keep class com.appsflyer.internal.AFd1nSDK$1437$AFa1ySDK {
+    java.lang.String AFInAppEventParameterName();
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class com.appsflyer.internal.AFd1kSDK {
+    android.content.Context valueOf;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFd1kSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFd1lSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFd1lSDK$1 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFd1lSDK$AFa1vSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1oSDK
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1fSDK {
+    com.appsflyer.internal.AFd1fSDK$AFa1uSDK AFa1uSDK;    <init>(java.lang.String,java.lang.String,java.lang.String,int,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1fSDK$AFa1uSDK {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1hSDK$5 {
+    com.appsflyer.internal.AFd1jSDK AFInAppEventParameterName();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1hSDK$4 {
+    java.util.concurrent.ExecutorService AFInAppEventParameterName();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1hSDK$2 {
+    com.appsflyer.internal.AFd1sSDK values();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1hSDK$3 {
+    com.appsflyer.internal.AFd1tSDK AFInAppEventType();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1hSDK$1 {
+    com.appsflyer.internal.AFf1bSDK valueOf();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1hSDK$6 {
+    com.appsflyer.internal.AFd1bSDK values();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1hSDK$10 {
+    com.appsflyer.internal.AFg1xSDK AFKeystoreWrapper();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1cSDK {
+    com.appsflyer.internal.AFd1cSDK$AFa1tSDK AFa1tSDK;}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1cSDK$AFa1tSDK {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFd1aSDK$3 {
+    java.lang.CharSequence valueOf(java.lang.StackTraceElement);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFd1aSDK$3 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFe1ySDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1xSDK {
+    <init>(com.appsflyer.internal.AFd1sSDK,byte[],java.util.Map,int,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keepclassmembers,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1wSDK {
+    void AFKeystoreWrapper();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1rSDK
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1qSDK {
+    com.appsflyer.internal.AFe1qSDK$AFa1vSDK AFa1vSDK;    <init>(java.lang.String,java.util.Map,byte[],java.lang.String,boolean,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1qSDK$AFa1vSDK {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFe1tSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1mSDK
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFe1lSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFe1nSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFe1pSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1hSDK
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1gSDK {
+    com.appsflyer.internal.AFe1gSDK$AFa1vSDK AFa1vSDK;}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1gSDK$AFa1vSDK {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1gSDK$5 {
+    java.lang.String AFInAppEventParameterName();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1gSDK$4 {
+    java.lang.String AFKeystoreWrapper();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1iSDK
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFe1cSDK
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFe1aSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFf1wSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1vSDK {
+    com.appsflyer.internal.AFf1vSDK$AFa1tSDK AFa1tSDK;}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1vSDK$AFa1tSDK
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1vSDK$AFa1vSDK
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1vSDK$AFa1ySDK
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1vSDK$4
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1vSDK$1
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFf1eSDK {
+    <init>();
+}
+
+-keepclassmembers,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1eSDK {
+    void valueOf();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFf1dSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1aSDK {
+    com.appsflyer.internal.AFf1aSDK$AFa1zSDK AFa1zSDK;}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1aSDK$AFa1zSDK {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1aSDK$1 {
+    java.lang.Boolean AFInAppEventType();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFf1aSDK$5 {
+    java.lang.Boolean AFKeystoreWrapper();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFg1zSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFg1lSDK$3 {
+    java.text.SimpleDateFormat AFKeystoreWrapper();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFg1lSDK$3 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFg1lSDK$2 {
+    com.appsflyer.AppsFlyerProperties valueOf();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFg1lSDK$2 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFg1jSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFg1kSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFg1dSDK {
+    com.appsflyer.internal.AFg1dSDK$AFa1zSDK AFa1zSDK;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFg1dSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFg1dSDK$AFa1zSDK {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class com.appsflyer.internal.AFg1hSDK {
+    void e(com.appsflyer.internal.AFg1gSDK,java.lang.String,java.lang.Throwable,boolean,boolean);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFg1hSDK$AFa1uSDK {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class com.appsflyer.internal.AFg1gSDK {
+    com.appsflyer.internal.AFg1gSDK AFInAppEventParameterName;}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFh1xSDK {
+    <init>(java.lang.String,java.lang.Boolean,java.lang.Boolean,java.lang.Boolean,java.lang.Boolean,java.lang.String,java.lang.Boolean,java.util.Map,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1xSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1tSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1vSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1wSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1rSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1oSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1qSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1pSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1sSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1lSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1jSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFh1kSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFh1iSDK
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFh1dSDK {
+    com.appsflyer.internal.AFh1dSDK$AFa1vSDK AFa1vSDK;}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFh1dSDK$AFa1vSDK {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFi1vSDK$3 {
+    android.net.NetworkInfo values(android.net.Network);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFi1xSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFi1pSDK {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFi1sSDK
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFi1kSDK
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFi1dSDK {
+    com.appsflyer.internal.AFi1dSDK$AFa1tSDK AFa1tSDK;}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFi1aSDK$1 {
+    android.os.Parcelable values();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFi1aSDK$2 {
+    java.lang.String values();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFi1aSDK$5 {
+    java.lang.Boolean values();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFi1aSDK$4 {
+    android.content.Intent AFInAppEventType();
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFi1eSDK {
+    com.appsflyer.internal.AFi1eSDK$AFa1tSDK AFa1tSDK;    <init>(com.appsflyer.internal.AFd1sSDK,com.appsflyer.internal.AFj1wSDK,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFi1eSDK$AFa1tSDK {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep,allowshrinking,allowobfuscation class com.appsflyer.internal.AFj1zSDK {
+    com.appsflyer.internal.AFj1zSDK INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFj1xSDK {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.internal.AFj1vSDK {
+    <init>();
+}
+
+-keep class com.appsflyer.internal.AFj1rSDK {
+    <init>(java.io.InputStream,int,int,short,int,int);
+}
+
+-keep class com.appsflyer.internal.AFj1qSDK {
+    <init>(java.io.InputStream,int[],byte[],int,boolean,int);
+}
+
+-keep class com.appsflyer.internal.AFj1oSDK {
+    int AFKeystoreWrapper;    <init>();
+}
+
+-keep class com.appsflyer.internal.AFj1pSDK {
+    int AFInAppEventParameterName;    int valueOf;    char AFInAppEventType;    char AFKeystoreWrapper;    <init>();
+}
+
+-keep class com.appsflyer.internal.AFj1nSDK {
+    int values;    int valueOf;    <init>();
+    char[] AFInAppEventType(long,char[],int);
+}
+
+-keep class androidx.annotation.NonNull
+
+-keep,allowshrinking,allowobfuscation class androidx.annotation.RequiresApi {
+    int value();
+    int api();
+}
+
+-keep,allowshrinking,allowobfuscation class com.android.installreferrer.api.InstallReferrerClient
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.android.installreferrer.api.InstallReferrerClient {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.appsflyer.lvl.AppsFlyerLVL {
+    <init>();
+}
+
+-keep,allowobfuscation class com.google.android.gms.ads.identifier.AdvertisingIdClient
+
+-keep,allowobfuscation class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.google.android.gms.common.BlockingServiceConnection {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.google.android.gms.common.GoogleApiAvailability {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.google.android.gms.common.GoogleApiAvailabilityLight {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.google.android.gms.common.api.internal.zabq {
+    android.content.Context mContext;    com.google.android.gms.common.api.internal.zabr zajh;    <init>(com.google.android.gms.common.api.internal.zabr);
+    void zac(android.content.Context);
+    void unregister();
+    void onReceive(android.content.Context,android.content.Intent);
+}
+
+-keep,allowshrinking,allowobfuscation class com.google.android.gms.common.api.internal.zabr {
+    void zas();
+}
+
+-keepclassmembers,allowobfuscation class com.google.android.gms.common.api.internal.zabr {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.google.android.gms.common.internal.DialogRedirect {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.google.android.gms.internal.ads_identifier.zze {
+    java.lang.String getId();
+    boolean zzb(boolean);
+    boolean zzc();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.google.android.gms.tasks.Task {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.google.firebase.messaging.RemoteMessage
+
+-keep,allowshrinking,allowobfuscation class com.miui.referrer.annotation.ClientState {
+    com.miui.referrer.annotation.ClientState$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class com.miui.referrer.annotation.GetAppsReferrerResponse {
+    com.miui.referrer.annotation.GetAppsReferrerResponse$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class com.miui.referrer.api.GetAppsReferrerClient {
+    com.miui.referrer.api.GetAppsReferrerClient$Companion Companion;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class com.miui.referrer.api.GetAppsReferrerClient {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class com.miui.referrer.api.GetAppsReferrerClient$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class com.miui.referrer.api.GetAppsReferrerClientImpl {
+    com.miui.referrer.api.GetAppsReferrerClientImpl$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class com.miui.referrer.api.GetAppsReferrerClientImpl$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class com.miui.referrer.api.GetAppsReferrerDetails {
+    com.miui.referrer.api.GetAppsReferrerDetails$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class com.miui.referrer.api.GetAppsReferrerDetails$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class com.miui.referrer.commons.LogUtils {
+    com.miui.referrer.commons.LogUtils INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.DeepRecursiveScope {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.ExceptionsKt__ExceptionsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.KotlinNothingValueException {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.KotlinNullPointerException {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.KotlinVersion {
+    kotlin.KotlinVersion$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.KotlinVersion$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.KotlinVersionCurrentValue {
+    kotlin.KotlinVersionCurrentValue INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.LazyKt__LazyJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.LazyKt__LazyKt {
+    <init>();
+}
+
+-keep class kotlin.Metadata
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.NoWhenBranchMatchedException {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.NotImplementedError {
+    <init>(java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.NotImplementedError {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.NumbersKt__BigDecimalsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.NumbersKt__BigIntegersKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.NumbersKt__FloorDivModKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.NumbersKt__NumbersJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.NumbersKt__NumbersKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.PreconditionsKt__AssertionsJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.PreconditionsKt__PreconditionsKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.Result {
+    kotlin.Result$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.Result$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.SafePublicationLazyImpl {
+    kotlin.SafePublicationLazyImpl$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.SafePublicationLazyImpl$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.StandardKt__StandardKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.StandardKt__SynchronizedKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.SynchronizedLazyImpl {
+    <init>(kotlin.jvm.functions.Function0,java.lang.Object,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.functions.Function0
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.TypeCastException {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.UByte {
+    kotlin.UByte$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.UByte$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.UInt {
+    kotlin.UInt$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.UInt$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ULong {
+    kotlin.ULong$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.ULong$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.UNINITIALIZED_VALUE {
+    kotlin.UNINITIALIZED_VALUE INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.UShort {
+    kotlin.UShort$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.UShort$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.UninitializedPropertyAccessException {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.Unit {
+    kotlin.Unit INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin._Assertions {
+    kotlin._Assertions INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.AbstractCollection {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.AbstractCollection$toString$1 {
+    java.lang.CharSequence invoke(java.lang.Object);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.AbstractIterator {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.AbstractList {
+    kotlin.collections.AbstractList$Companion Companion;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.AbstractList {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.AbstractList$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.AbstractMap {
+    kotlin.collections.AbstractMap$Companion Companion;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.AbstractMap {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.AbstractMap$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.AbstractMap$toString$1 {
+    java.lang.CharSequence invoke(java.util.Map$Entry);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.AbstractMutableCollection {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.AbstractMutableList {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.AbstractMutableMap {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.AbstractMutableSet {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.AbstractSet {
+    kotlin.collections.AbstractSet$Companion Companion;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.AbstractSet {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.AbstractSet$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArrayDeque {
+    kotlin.collections.ArrayDeque$Companion Companion;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.ArrayDeque {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArrayDeque$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.ArraysKt__ArraysJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.ArraysKt__ArraysKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.ArraysKt___ArraysJvmKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.ArraysKt___ArraysKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArraysKt___ArraysKt$withIndex$1 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArraysKt___ArraysKt$withIndex$2 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArraysKt___ArraysKt$withIndex$3 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArraysKt___ArraysKt$withIndex$4 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArraysKt___ArraysKt$withIndex$5 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArraysKt___ArraysKt$withIndex$6 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArraysKt___ArraysKt$withIndex$7 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArraysKt___ArraysKt$withIndex$8 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.ArraysKt___ArraysKt$withIndex$9 {
+    java.util.Iterator invoke();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.BooleanIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.ByteIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CharIterator {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.CollectionSystemProperties {
+    kotlin.collections.CollectionSystemProperties INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CollectionsKt__CollectionsJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CollectionsKt__CollectionsKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.CollectionsKt__CollectionsKt$binarySearchBy$1 {
+    java.lang.Integer invoke(java.lang.Object);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CollectionsKt__IterablesKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CollectionsKt__IteratorsJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CollectionsKt__IteratorsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CollectionsKt__MutableCollectionsJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CollectionsKt__MutableCollectionsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CollectionsKt__ReversedViewsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CollectionsKt___CollectionsJvmKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.CollectionsKt___CollectionsKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.CollectionsKt___CollectionsKt$elementAt$1 {
+    java.lang.Object invoke(int);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.CollectionsKt___CollectionsKt$withIndex$1 {
+    java.util.Iterator invoke();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.DoubleIterator {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.EmptyIterator {
+    kotlin.collections.EmptyIterator INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.EmptyList {
+    kotlin.collections.EmptyList INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.EmptyMap {
+    kotlin.collections.EmptyMap INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.EmptySet {
+    kotlin.collections.EmptySet INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.FloatIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.GroupingKt__GroupingJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.GroupingKt__GroupingKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.IntIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.LongIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.MapsKt__MapWithDefaultKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.MapsKt__MapsJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.MapsKt__MapsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.MapsKt___MapsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.SetsKt__SetsJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.SetsKt__SetsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.SetsKt___SetsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.ShortIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.UByteIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.UCollectionsKt___UCollectionsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.UIntIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.ULongIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.UShortIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.builders.AbstractMapBuilderEntrySet {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.builders.ListBuilder {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.builders.MapBuilder {
+    kotlin.collections.builders.MapBuilder$Companion Companion;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.builders.MapBuilder {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.builders.MapBuilder$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.builders.SerializedCollection {
+    kotlin.collections.builders.SerializedCollection$Companion Companion;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.builders.SerializedCollection {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.builders.SerializedCollection$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.builders.SerializedMap {
+    kotlin.collections.builders.SerializedMap$Companion Companion;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.builders.SerializedMap {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.builders.SerializedMap$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.builders.SetBuilder {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.unsigned.UArraysKt___UArraysJvmKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.collections.unsigned.UArraysKt___UArraysKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.unsigned.UArraysKt___UArraysKt$withIndex$1 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.unsigned.UArraysKt___UArraysKt$withIndex$2 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.unsigned.UArraysKt___UArraysKt$withIndex$3 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.collections.unsigned.UArraysKt___UArraysKt$withIndex$4 {
+    java.util.Iterator invoke();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$compareBy$1 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$compareBy$2 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$compareBy$3 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$compareByDescending$1 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$compareByDescending$2 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$nullsFirst$1 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$nullsLast$1 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$then$1 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$thenBy$1 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$thenBy$2 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$thenByDescending$1 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$thenByDescending$2 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$thenComparator$1 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ComparisonsKt__ComparisonsKt$thenDescending$1 {
+    int compare(java.lang.Object,java.lang.Object);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.comparisons.ComparisonsKt___ComparisonsJvmKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.comparisons.ComparisonsKt___ComparisonsKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.NaturalOrderComparator {
+    kotlin.comparisons.NaturalOrderComparator INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.comparisons.ReverseOrderComparator {
+    kotlin.comparisons.ReverseOrderComparator INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.comparisons.UComparisonsKt___UComparisonsKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.CombinedContext$Serialized {
+    kotlin.coroutines.CombinedContext$Serialized$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.CombinedContext$Serialized$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.CombinedContext$toString$1 {
+    java.lang.String invoke(java.lang.String,kotlin.coroutines.CoroutineContext$Element);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.coroutines.CombinedContext$toString$1 {
+    <init>();
+}
+
+-keep class kotlin.coroutines.CoroutineContext$Element
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.CombinedContext$writeReplace$1 {
+    void invoke(kotlin.Unit,kotlin.coroutines.CoroutineContext$Element);
+}
+
+-keep class kotlin.Unit
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.ContinuationInterceptor {
+    kotlin.coroutines.ContinuationInterceptor$Key Key;}
+
+-keep class kotlin.coroutines.CoroutineContext$Element
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.CoroutineContext$plus$1 {
+    kotlin.coroutines.CoroutineContext invoke(kotlin.coroutines.CoroutineContext,kotlin.coroutines.CoroutineContext$Element);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.coroutines.CoroutineContext$plus$1 {
+    <init>();
+}
+
+-keep class kotlin.coroutines.CoroutineContext
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.EmptyCoroutineContext {
+    kotlin.coroutines.EmptyCoroutineContext INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.SafeContinuation {
+    kotlin.coroutines.SafeContinuation$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.SafeContinuation$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.jvm.internal.CompletedContinuation {
+    kotlin.coroutines.jvm.internal.CompletedContinuation INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.coroutines.jvm.internal.ModuleNameRetriever {
+    kotlin.coroutines.jvm.internal.ModuleNameRetriever INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.coroutines.jvm.internal.RunSuspend {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.internal.PlatformImplementations {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.internal.PlatformImplementations$ReflectThrowable {
+    kotlin.internal.PlatformImplementations$ReflectThrowable INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.internal.jdk7.JDK7PlatformImplementations {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.internal.jdk7.JDK7PlatformImplementations$ReflectSdkVersion {
+    kotlin.internal.jdk7.JDK7PlatformImplementations$ReflectSdkVersion INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.internal.jdk8.JDK8PlatformImplementations {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.internal.jdk8.JDK8PlatformImplementations$ReflectSdkVersion {
+    kotlin.internal.jdk8.JDK8PlatformImplementations$ReflectSdkVersion INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.AccessDeniedException {
+    <init>(java.io.File,java.io.File,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.FileAlreadyExistsException {
+    <init>(java.io.File,java.io.File,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.FileSystemException {
+    <init>(java.io.File,java.io.File,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.FileTreeWalk {
+    <init>(java.io.File,kotlin.io.FileWalkDirection,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function1,kotlin.jvm.functions.Function2,int,int,kotlin.jvm.internal.DefaultConstructorMarker);
+    <init>(java.io.File,kotlin.io.FileWalkDirection,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.io.FileWalkDirection
+
+-keep class kotlin.io.FileWalkDirection
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.io.FilesKt__FilePathComponentsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.io.FilesKt__FileReadWriteKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.FilesKt__FileReadWriteKt$readLines$1 {
+    void invoke(java.lang.String);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.io.FilesKt__FileTreeWalkKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.io.FilesKt__UtilsKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.FilesKt__UtilsKt$copyRecursively$1 {
+    java.lang.Void invoke(java.io.File,java.io.IOException);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.io.FilesKt__UtilsKt$copyRecursively$1 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.FilesKt__UtilsKt$copyRecursively$2 {
+    void invoke(java.io.File,java.io.IOException);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.LineReader {
+    kotlin.io.LineReader INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.NoSuchFileException {
+    <init>(java.io.File,java.io.File,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.TextStreamsKt$readLines$1 {
+    void invoke(java.lang.String);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.io.path.PathRelativizer {
+    kotlin.io.path.PathRelativizer INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.io.path.PathsKt__PathReadWriteKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.io.path.PathsKt__PathUtilsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.KotlinReflectionNotSupportedError {
+    <init>();
+}
+
+-keep class kotlin.jvm.functions.Function0
+
+-keep class kotlin.jvm.functions.Function1
+
+-keep class kotlin.jvm.functions.Function2
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.BooleanCompanionObject {
+    kotlin.jvm.internal.BooleanCompanionObject INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.ByteCompanionObject {
+    kotlin.jvm.internal.ByteCompanionObject INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.CallableReference {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.CharCompanionObject {
+    kotlin.jvm.internal.CharCompanionObject INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.ClassReference {
+    kotlin.jvm.internal.ClassReference$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.ClassReference$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.DoubleCompanionObject {
+    kotlin.jvm.internal.DoubleCompanionObject INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.EnumCompanionObject {
+    kotlin.jvm.internal.EnumCompanionObject INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.FloatCompanionObject {
+    kotlin.jvm.internal.FloatCompanionObject INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.IntCompanionObject {
+    kotlin.jvm.internal.IntCompanionObject INSTANCE;}
+
+-keep class kotlin.jvm.internal.Intrinsics {
+    void checkNotNullExpressionValue(java.lang.Object,java.lang.String);
+    void checkNotNullParameter(java.lang.Object,java.lang.String);
+}
+
+-keepclassmembers,allowshrinking,allowobfuscation class kotlin.jvm.internal.Intrinsics {
+    void throwNpe();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.LocalVariableReference {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.LongCompanionObject {
+    kotlin.jvm.internal.LongCompanionObject INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.MutableLocalVariableReference {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.MutablePropertyReference {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.MutablePropertyReference0 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.MutablePropertyReference1 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.MutablePropertyReference2 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.PropertyReference {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.PropertyReference0 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.PropertyReference1 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.PropertyReference2 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.Ref$BooleanRef {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.Ref$IntRef {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.Ref$ObjectRef {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.Reflection {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.jvm.internal.ReflectionFactory {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.ShortCompanionObject {
+    kotlin.jvm.internal.ShortCompanionObject INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.StringCompanionObject {
+    kotlin.jvm.internal.StringCompanionObject INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.TypeParameterReference {
+    kotlin.jvm.internal.TypeParameterReference$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.TypeParameterReference$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.TypeReference {
+    kotlin.jvm.internal.TypeReference$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.TypeReference$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.jvm.internal.TypeReference$asString$args$1 {
+    java.lang.CharSequence invoke(kotlin.reflect.KTypeProjection);
+}
+
+-keep class kotlin.reflect.KTypeProjection
+
+-keep,allowshrinking,allowobfuscation class kotlin.math.Constants {
+    kotlin.math.Constants INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.math.MathKt__MathHKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.math.MathKt__MathJVMKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.properties.Delegates {
+    kotlin.properties.Delegates INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.properties.NotNullVar {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.random.AbstractPlatformRandom {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.random.FallbackThreadLocalRandom {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.random.FallbackThreadLocalRandom$implStorage$1 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.random.KotlinRandom {
+    kotlin.random.KotlinRandom$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.random.KotlinRandom$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.random.PlatformRandom {
+    kotlin.random.PlatformRandom$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.random.PlatformRandom$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.random.Random {
+    kotlin.random.Random$Default Default;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.random.Random {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.random.Random$Default {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.random.Random$Default$Serialized {
+    kotlin.random.Random$Default$Serialized INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.random.XorWowRandom {
+    kotlin.random.XorWowRandom$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.random.XorWowRandom$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.random.jdk8.PlatformThreadLocalRandom {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.CharProgression {
+    kotlin.ranges.CharProgression$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.CharProgression$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.CharRange {
+    kotlin.ranges.CharRange$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.CharRange$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.IntProgression {
+    kotlin.ranges.IntProgression$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.IntProgression$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.IntRange {
+    kotlin.ranges.IntRange$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.IntRange$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.LongProgression {
+    kotlin.ranges.LongProgression$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.LongProgression$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.LongRange {
+    kotlin.ranges.LongRange$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.LongRange$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.ranges.RangesKt__RangesKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.ranges.RangesKt___RangesKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.UIntProgression {
+    kotlin.ranges.UIntProgression$Companion Companion;    <init>(int,int,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.UIntProgression$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.UIntProgressionIterator {
+    <init>(int,int,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.UIntRange {
+    kotlin.ranges.UIntRange$Companion Companion;    <init>(int,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.UIntRange$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.ULongProgression {
+    kotlin.ranges.ULongProgression$Companion Companion;    <init>(long,long,long,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.ULongProgression$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.ULongProgressionIterator {
+    <init>(long,long,long,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.ULongRange {
+    kotlin.ranges.ULongRange$Companion Companion;    <init>(long,long,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.ranges.ULongRange$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.ranges.URangesKt___URangesKt {
+    <init>();
+}
+
+-keep class kotlin.reflect.KTypeProjection
+
+-keepclassmembers,allowshrinking,allowobfuscation class kotlin.reflect.KTypeProjection {
+    kotlin.reflect.KTypeProjection$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.reflect.KTypeProjection$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.reflect.ParameterizedTypeImpl$getTypeName$1$1 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.reflect.TypesJVMKt$typeToString$unwrap$1 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.reflect.WildcardTypeImpl {
+    kotlin.reflect.WildcardTypeImpl$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.reflect.WildcardTypeImpl$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.EmptySequence {
+    kotlin.sequences.EmptySequence INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.FilteringSequence {
+    <init>(kotlin.sequences.Sequence,boolean,kotlin.jvm.functions.Function1,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.sequences.Sequence
+
+-keep class kotlin.sequences.Sequence
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequenceBuilderIterator {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequenceScope {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt__SequenceBuilderKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt__SequencesJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt__SequencesKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt__SequencesKt$flatten$1 {
+    java.util.Iterator invoke(kotlin.sequences.Sequence);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt__SequencesKt$flatten$1 {
+    <init>();
+}
+
+-keep class kotlin.sequences.Sequence
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt__SequencesKt$flatten$2 {
+    java.util.Iterator invoke(java.lang.Iterable);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt__SequencesKt$flatten$2 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt__SequencesKt$flatten$3 {
+    java.lang.Object invoke(java.lang.Object);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt__SequencesKt$flatten$3 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt__SequencesKt$generateSequence$1 {
+    java.lang.Object invoke(java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt__SequencesKt$generateSequence$2 {
+    java.lang.Object invoke();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesJvmKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesJvmKt$filterIsInstance$1 {
+    java.lang.Boolean invoke(java.lang.Object);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$distinct$1 {
+    java.lang.Object invoke(java.lang.Object);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$distinct$1 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$elementAt$1 {
+    java.lang.Object invoke(int);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$filterIndexed$1 {
+    java.lang.Boolean invoke(kotlin.collections.IndexedValue);
+}
+
+-keep class kotlin.collections.IndexedValue
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$filterIndexed$2 {
+    java.lang.Object invoke(kotlin.collections.IndexedValue);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$filterIndexed$2 {
+    <init>();
+}
+
+-keep class kotlin.collections.IndexedValue
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$filterIsInstance$1 {
+    java.lang.Boolean invoke(java.lang.Object);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$filterIsInstance$1 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$filterNotNull$1 {
+    java.lang.Boolean invoke(java.lang.Object);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$filterNotNull$1 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$flatMap$1 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$flatMap$2 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$flatMapIndexed$1 {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$flatMapIndexed$2 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$minus$1$iterator$1 {
+    java.lang.Boolean invoke(java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$minus$2$iterator$1 {
+    java.lang.Boolean invoke(java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$minus$3$iterator$1 {
+    java.lang.Boolean invoke(java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$minus$4$iterator$1 {
+    java.lang.Boolean invoke(java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$onEach$1 {
+    java.lang.Object invoke(java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$onEachIndexed$1 {
+    java.lang.Object invoke(int,java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$requireNoNulls$1 {
+    java.lang.Object invoke(java.lang.Object);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$zip$1 {
+    kotlin.Pair invoke(java.lang.Object,java.lang.Object);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$zip$1 {
+    <init>();
+}
+
+-keep class kotlin.Pair
+
+-keep,allowshrinking,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$1 {
+    kotlin.Pair invoke(java.lang.Object,java.lang.Object);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$1 {
+    <init>();
+}
+
+-keep class kotlin.Pair
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.sequences.USequencesKt___USequencesKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.CharCategory {
+    kotlin.text.CharCategory$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.CharCategory$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.CharDirectionality {
+    kotlin.text.CharDirectionality$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.CharDirectionality$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.CharDirectionality$Companion$directionalityMap$2 {
+    java.util.Map invoke();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.CharDirectionality$Companion$directionalityMap$2 {
+    <init>();
+}
+
+-keep class kotlin.text.CharsKt
+
+-keep class kotlin.text.CharsKt__CharJVMKt {
+    int checkRadix(int);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.CharsKt__CharJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.CharsKt__CharKt {
+    <init>();
+}
+
+-keep class kotlin.text.Charsets {
+    java.nio.charset.Charset UTF_8;}
+
+-keepclassmembers,allowshrinking,allowobfuscation class kotlin.text.Charsets {
+    kotlin.text.Charsets INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.MatcherMatchResult$groups$1$iterator$1 {
+    kotlin.text.MatchGroup invoke(int);
+}
+
+-keep class kotlin.text.MatchGroup
+
+-keep class kotlin.text.Regex {
+    <init>(java.lang.String);
+    java.lang.String replace(java.lang.CharSequence,java.lang.String);
+}
+
+-keepclassmembers,allowshrinking,allowobfuscation class kotlin.text.Regex {
+    kotlin.text.Regex$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.Regex$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.Regex$Serialized {
+    kotlin.text.Regex$Serialized$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.Regex$Serialized$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.Regex$findAll$1 {
+    kotlin.text.MatchResult invoke();
+}
+
+-keep class kotlin.text.MatchResult
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.Regex$findAll$2 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.Regex$special$$inlined$fromInt$1 {
+    java.lang.Boolean invoke(java.lang.Enum);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.RegexKt$fromInt$1$1 {
+    java.lang.Boolean invoke(java.lang.Enum);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.RegexOption {
+    <init>(java.lang.String,int,int,int,int,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.ScreenFloatValueRegEx {
+    kotlin.text.ScreenFloatValueRegEx INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__AppendableKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__IndentKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt__IndentKt$getIndentFunction$1 {
+    java.lang.String invoke(java.lang.String);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__IndentKt$getIndentFunction$1 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt__IndentKt$getIndentFunction$2 {
+    java.lang.String invoke(java.lang.String);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt__IndentKt$prependIndent$1 {
+    java.lang.String invoke(java.lang.String);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__RegexExtensionsJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__RegexExtensionsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__StringBuilderJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__StringBuilderKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__StringNumberConversionsJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__StringNumberConversionsKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__StringsJVMKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt__StringsKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt__StringsKt$rangesDelimitedBy$1 {
+    kotlin.Pair invoke(java.lang.CharSequence,int);
+}
+
+-keep class kotlin.Pair
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt__StringsKt$rangesDelimitedBy$2 {
+    kotlin.Pair invoke(java.lang.CharSequence,int);
+}
+
+-keep class kotlin.Pair
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt__StringsKt$splitToSequence$1 {
+    java.lang.String invoke(kotlin.ranges.IntRange);
+}
+
+-keep class kotlin.ranges.IntRange
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt__StringsKt$splitToSequence$2 {
+    java.lang.String invoke(kotlin.ranges.IntRange);
+}
+
+-keep class kotlin.ranges.IntRange
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt___StringsJvmKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt___StringsKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt___StringsKt$chunkedSequence$1 {
+    java.lang.String invoke(java.lang.CharSequence);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt___StringsKt$chunkedSequence$1 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt___StringsKt$windowed$1 {
+    java.lang.String invoke(java.lang.CharSequence);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt___StringsKt$windowed$1 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt___StringsKt$windowedSequence$1 {
+    java.lang.String invoke(java.lang.CharSequence);
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.text.StringsKt___StringsKt$windowedSequence$1 {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt___StringsKt$windowedSequence$2 {
+    java.lang.Object invoke(int);
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.StringsKt___StringsKt$withIndex$1 {
+    java.util.Iterator invoke();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.SystemProperties {
+    kotlin.text.SystemProperties INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.text.Typography {
+    kotlin.text.Typography INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.time.AbstractDoubleTimeSource$DoubleTimeMark {
+    <init>(double,kotlin.time.AbstractDoubleTimeSource,long,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.time.AbstractDoubleTimeSource
+
+-keep,allowshrinking,allowobfuscation class kotlin.time.AbstractLongTimeSource$LongTimeMark {
+    <init>(long,kotlin.time.AbstractLongTimeSource,long,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.time.AbstractLongTimeSource
+
+-keep,allowshrinking,allowobfuscation class kotlin.time.AdjustedTimeMark {
+    <init>(kotlin.time.TimeMark,long,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.time.TimeMark
+
+-keep,allowshrinking,allowobfuscation class kotlin.time.Duration {
+    kotlin.time.Duration$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.time.Duration$Companion {
+    <init>(kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.time.DurationUnitKt__DurationUnitJvmKt {
+    <init>();
+}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.time.DurationUnitKt__DurationUnitKt {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.time.MonotonicTimeSource {
+    kotlin.time.MonotonicTimeSource INSTANCE;}
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.time.TestTimeSource {
+    <init>();
+}
+
+-keep class kotlin.time.TimeMark
+
+-keepclassmembers,allowoptimization,allowobfuscation class kotlin.time.TimeMark {
+    <init>();
+}
+
+-keep,allowshrinking,allowobfuscation class kotlin.time.TimeSource {
+    kotlin.time.TimeSource$Companion Companion;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.time.TimeSource$Monotonic {
+    kotlin.time.TimeSource$Monotonic INSTANCE;}
+
+-keep,allowshrinking,allowobfuscation class kotlin.time.TimedValue {
+    <init>(java.lang.Object,long,kotlin.jvm.internal.DefaultConstructorMarker);
+}
+
+-keep class kotlin.jvm.internal.DefaultConstructorMarker
+
+-keep class org.jetbrains.annotations.NotNull
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\3d0aca96fb7f4d794de343f7767d82c8\transformed\jetified-af-android-sdk-6.13.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\a5ab3011ea7db35b6bee0ee8f52ab9e2\transformed\jetified-crashreport-4.1.9.3\proguard.txt
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\a5ab3011ea7db35b6bee0ee8f52ab9e2\transformed\jetified-crashreport-4.1.9.3\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\b1dbde727d7a84593caddcc7a27456f3\transformed\jetified-play-services-basement-17.0.0\proguard.txt
+# Proguard flags for consumers of the Google Play services SDK
+# https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project
+
+# Keep SafeParcelable NULL value, needed for reflection by DowngradeableSafeParcel
+-keepclassmembers public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+# Needed for Parcelable/SafeParcelable classes & their creators to not get renamed, as they are
+# found via reflection.
+-keep class com.google.android.gms.common.internal.ReflectedParcelable
+-keepnames class * implements com.google.android.gms.common.internal.ReflectedParcelable
+-keepclassmembers class * implements android.os.Parcelable {
+  public static final *** CREATOR;
+}
+
+# Keep the classes/members we need for client functionality.
+-keep @interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class *
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <fields>;
+}
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <methods>;
+}
+
+# Keep the names of classes/members we need for client functionality.
+-keep @interface com.google.android.gms.common.annotation.KeepName
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+  @com.google.android.gms.common.annotation.KeepName *;
+}
+
+# Keep Dynamite API entry points
+-keep @interface com.google.android.gms.common.util.DynamiteApi
+-keep @com.google.android.gms.common.util.DynamiteApi public class * {
+  public <fields>;
+  public <methods>;
+}
+
+# Needed when building against pre-Marshmallow SDK.
+-dontwarn android.security.NetworkSecurityPolicy
+
+# Needed when building against Marshmallow SDK.
+-dontwarn android.app.Notification
+
+# Protobuf has references not on the Android boot classpath
+-dontwarn sun.misc.Unsafe
+-dontwarn libcore.io.Memory
+
+# Internal Google annotations for generating Proguard keep rules.
+-dontwarn com.google.android.apps.common.proguard.UsedBy*
+
+# Annotations referenced by the SDK but whose definitions are contained in
+# non-required dependencies.
+-dontwarn javax.annotation.**
+-dontwarn org.checkerframework.**
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\b1dbde727d7a84593caddcc7a27456f3\transformed\jetified-play-services-basement-17.0.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\c9c483915b8d5bb8a5403f175aaec468\transformed\jetified-facebook-bolts-18.0.2\proguard.txt
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-keepclassmembers class * implements java.io.Serializable {
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\c9c483915b8d5bb8a5403f175aaec468\transformed\jetified-facebook-bolts-18.0.2\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\2edbcd234e7695fae78c58a1164d156b\transformed\appcompat-1.1.0\proguard.txt
+# Copyright (C) 2018 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Ensure that reflectively-loaded inflater is not obfuscated. This can be
+# removed when we stop supporting AAPT1 builds.
+-keepnames class androidx.appcompat.app.AppCompatViewInflater
+
+# aapt is not able to read app::actionViewClass and app:actionProviderClass to produce proguard
+# keep rules. Add a commonly used SearchView to the keep list until b/109831488 is resolved.
+-keep class androidx.appcompat.widget.SearchView { <init>(...); }
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\2edbcd234e7695fae78c58a1164d156b\transformed\appcompat-1.1.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\9116e6b7f9bb55a7b2be035f7b761765\transformed\fragment-1.3.0\proguard.txt
+# Copyright (C) 2020 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# The default FragmentFactory creates Fragment instances using reflection
+-if public class ** extends androidx.fragment.app.Fragment
+-keepclasseswithmembers,allowobfuscation public class <1> {
+    public <init>();
+}
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\9116e6b7f9bb55a7b2be035f7b761765\transformed\fragment-1.3.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\2d3f9c5dbc37b22cbc87b29be0f546d3\transformed\vectordrawable-animated-1.1.0\proguard.txt
+# Copyright (C) 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# keep setters in VectorDrawables so that animations can still work.
+-keepclassmembers class androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$* {
+   void set*(***);
+   *** get*();
+}
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\2d3f9c5dbc37b22cbc87b29be0f546d3\transformed\vectordrawable-animated-1.1.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\c7b96f439da65e0fa2f16184ba39cc2a\transformed\coordinatorlayout-1.0.0\proguard.txt
+# Copyright (C) 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# CoordinatorLayout resolves the behaviors of its child components with reflection.
+-keep public class * extends androidx.coordinatorlayout.widget.CoordinatorLayout$Behavior {
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>();
+}
+
+# Make sure we keep annotations for CoordinatorLayout's DefaultBehavior and ViewPager's DecorView
+-keepattributes *Annotation*
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\c7b96f439da65e0fa2f16184ba39cc2a\transformed\coordinatorlayout-1.0.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\5987d7951a4da4857c39300bf80a3eb9\transformed\media-1.0.0\proguard.txt
+# Copyright (C) 2017 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Prevent Parcelable objects from being removed or renamed.
+-keep class android.support.v4.media.** implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+
+# Prevent Parcelable objects from being removed or renamed.
+-keep class androidx.media.** implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\5987d7951a4da4857c39300bf80a3eb9\transformed\media-1.0.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\09c7ab517019ed980213c14933f6e30b\transformed\core-1.3.2\proguard.txt
+# Never inline methods, but allow shrinking and obfuscation.
+-keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.view.ViewCompat$Api* {
+  <methods>;
+}
+-keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.view.WindowInsetsCompat$Impl* {
+  <methods>;
+}
+-keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.view.WindowInsetsCompat$BuilderImpl* {
+  <methods>;
+}
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\09c7ab517019ed980213c14933f6e30b\transformed\core-1.3.2\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\e4d7ad28529e967bcf0395f2d7133637\transformed\versionedparcelable-1.1.0\proguard.txt
+-keep public class * implements androidx.versionedparcelable.VersionedParcelable
+-keep public class android.support.**Parcelizer { *; }
+-keep public class androidx.**Parcelizer { *; }
+-keep public class androidx.versionedparcelable.ParcelImpl
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\e4d7ad28529e967bcf0395f2d7133637\transformed\versionedparcelable-1.1.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\f6bc6b1cdd0da250fd3c25851a16fa2f\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0\proguard.txt
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.ViewModel {
+    <init>(androidx.lifecycle.SavedStateHandle);
+}
+
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.AndroidViewModel {
+    <init>(android.app.Application,androidx.lifecycle.SavedStateHandle);
+}
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\f6bc6b1cdd0da250fd3c25851a16fa2f\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\7a8500bc8f0b46644620b1b9e2b76227\transformed\lifecycle-viewmodel-2.3.0\proguard.txt
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.ViewModel {
+    <init>();
+}
+
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.AndroidViewModel {
+    <init>(android.app.Application);
+}
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\7a8500bc8f0b46644620b1b9e2b76227\transformed\lifecycle-viewmodel-2.3.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\1ef889d9b0eaa8a52f72920dd94e681a\transformed\jetified-savedstate-1.1.0\proguard.txt
+# Copyright (C) 2019 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+-keepclassmembers,allowobfuscation class * implements androidx.savedstate.SavedStateRegistry$AutoRecreated {
+    <init>();
+}
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\1ef889d9b0eaa8a52f72920dd94e681a\transformed\jetified-savedstate-1.1.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\c86350c948bd0ef9d3a6b0b11844478b\transformed\lifecycle-runtime-2.3.0\proguard.txt
+-keepattributes *Annotation*
+
+-keepclassmembers enum androidx.lifecycle.Lifecycle$Event {
+    <fields>;
+}
+
+-keep !interface * implements androidx.lifecycle.LifecycleObserver {
+}
+
+-keep class * implements androidx.lifecycle.GeneratedAdapter {
+    <init>(...);
+}
+
+-keepclassmembers class ** {
+    @androidx.lifecycle.OnLifecycleEvent *;
+}
+
+# this rule is need to work properly when app is compiled with api 28, see b/142778206
+# Also this rule prevents registerIn from being inlined.
+-keepclassmembers class androidx.lifecycle.ReportFragment$LifecycleCallbacks { *; }
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\c86350c948bd0ef9d3a6b0b11844478b\transformed\lifecycle-runtime-2.3.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\72b1c7cb55abde4d9e1aa649913b0b42\transformed\rules\lib\META-INF\proguard\androidx-annotations.pro
+-keep,allowobfuscation @interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class * {*;}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <init>(...);
+}
+
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\72b1c7cb55abde4d9e1aa649913b0b42\transformed\rules\lib\META-INF\proguard\androidx-annotations.pro
+# The proguard configuration file for the following section is <unknown>
+-ignorewarnings
+# End of content from <unknown>

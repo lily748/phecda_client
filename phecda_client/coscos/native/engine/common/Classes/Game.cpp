@@ -41,7 +41,7 @@ bool Game::init() {
 
     se::ScriptEngine *se = se::ScriptEngine::getInstance();
 
-    jsb_set_xxtea_key("");
+    jsb_set_xxtea_key("68stGUb31EzZKeVl");
     jsb_init_file_operation_delegate();
 
 #if defined(CC_DEBUG) && (CC_DEBUG > 0)
