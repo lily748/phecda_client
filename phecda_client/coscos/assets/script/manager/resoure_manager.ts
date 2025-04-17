@@ -1,4 +1,4 @@
-import { _decorator, AssetManager, Asset, assetManager, Texture2D, resources, SpriteFrame, ImageAsset, SceneAsset, sys, __private } from 'cc';
+import { _decorator, AssetManager, Asset, assetManager, Texture2D, resources, SpriteFrame, ImageAsset, SceneAsset, sys, __private, Prefab } from 'cc';
 import { HotUpdateManager } from '../framework/hotUpdate/HotUpdateManager';
 const { ccclass } = _decorator;
 export class ResHandler {
@@ -6,7 +6,7 @@ export class ResHandler {
 }
 @ccclass('ResoureManager')
 export default class ResourceManager {
-
+    static topAdapPrefab: any;
     static loadAny(requests: string | string[] | Record<string, any> | Record<string, any>[], onProgress: (finished: number, total: number, item: AssetManager.RequestItem) => void, onComplete: (err: Error, data: any) => void): void {
         assetManager.loadAny(requests, onProgress, onComplete)
     }
@@ -206,5 +206,25 @@ export default class ResourceManager {
             console.log(key);
         })
         console.log(`当前资源总数:${assetManager.assets.count}`);
+    }
+
+
+    
+    /**
+     * gettopAdapPrefab
+     */
+    static getTopAdapPrefab(onComplete?: ( prefab: Prefab) => void) {
+        if (this.topAdapPrefab) {
+            onComplete && onComplete(this.topAdapPrefab)
+            return
+        }
+        ResourceManager.loadBundle<Prefab>("resources", "prefabs/hall/topAdap", Prefab, null, (err, asset) => {
+            if (err) {
+                console.error("loadBundle error : " + "prefabs/hall/topAdap", err)
+                return
+            }
+            this.topAdapPrefab = asset as Prefab
+            onComplete && onComplete(this.topAdapPrefab)
+        })
     }
 }

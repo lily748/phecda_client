@@ -337,7 +337,7 @@ export default class Login extends Module<LoginView, null>{
         if(!this.isChatMove || dis < 40){
             let user = UserDataModel.GetCurrentUser()
             let showID = user ? user.show_id : "NotLoggedIn"
-            sys.openURL("https://t.me/in4pgame")//GameConfig.CustomerUrl+`?userid=${showID}`)
+            sys.openURL("https://t.me/C1Gamesone")//GameConfig.CustomerUrl+`?userid=${showID}`)
         } 
         this.isChatMove = false
         this.view.Chat.off(Node.EventType.TOUCH_MOVE, this.onTouchMove, this)

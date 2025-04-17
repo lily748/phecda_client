@@ -70,7 +70,7 @@
     "loginServerIP": "ws://192.168.3.224",
     "loginServerPort": "10021",
     "isDirectConnectIp": false,
-    "_sType": 4,
+    "_sType": 2,
     "ServerListDomain": "http://13.235.19.182:802/api",
     "showLogPanel": true,
     "shouldCheckVersion": false,

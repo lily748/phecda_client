@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, instantiate, Widget, math, director, Tween } from 'cc';
+import { _decorator, Component, Node, Prefab, instantiate, Widget, math, director, Tween, sys } from 'cc';
 const { ccclass, property } = _decorator;
 
 import ViewBase from "./view_base";
@@ -6,6 +6,7 @@ import ModelBase from "./model_base";
 import ModuleManager from "../module_manager";
 import ResourceManager from "../../../manager/resoure_manager";
 import { DEBUG } from 'cc/env';
+import ScreenAdapter from '../../../utility/tools/screen_adapter';
 
 export enum ViewLayer {
     Low,
@@ -161,6 +162,17 @@ export default class Module<V extends ViewBase, M extends ModelBase> extends Com
             widget.isAlignRight = true;
             widget.alignMode = Widget.AlignMode.ON_WINDOW_RESIZE;
         }
+
+        if (sys.platform == sys.Platform.ANDROID) {
+            if (self.moduleName != "Loading" && self.moduleName != "Login" && self.moduleName != "NetPrompt") {
+                let screenAdapter = newNode.getComponent("ScreenAdapter")
+                if (!screenAdapter) {
+                    let screenAdapter = newNode.addComponent(ScreenAdapter)
+                }
+            }
+
+        }
+
 
         if (!self.isInited) {
             self.onInit(self.intentData);

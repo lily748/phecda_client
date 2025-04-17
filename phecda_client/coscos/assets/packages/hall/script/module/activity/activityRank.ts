@@ -188,7 +188,7 @@ export class ActivityRank extends Module<ActivityRankView, null> {
         this.amount=msg.jackpot;
         this._updateAmount(this.amount, msg.jackpot);
         let tips = find("center/tips/msg", this.view.ranking).getComponent(Label);
-        tips.string = msg.reward_rate + "%" + " of total bets by all 4pgame players.";
+        tips.string = msg.reward_rate + "%" + " of total bets by all c1games players.";
         this._updateRankTop3(msg.list);
         let myself = find("myself", this.view.ranking);
         let lblRank = find("rank", myself).getComponent(Label);

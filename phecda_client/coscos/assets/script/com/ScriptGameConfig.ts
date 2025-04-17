@@ -38,7 +38,7 @@ export class ScriptGameConfig extends Component {
             case ServerType.开发服:
                   return "http://172.31.12.179:8182"           
             case ServerType.测试服:
-                return "" 
+                return "http://13.235.19.182:8081" 
             case ServerType.预发布服:
                 return ""
             case ServerType.正式服:

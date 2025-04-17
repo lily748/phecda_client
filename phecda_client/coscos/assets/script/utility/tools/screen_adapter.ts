@@ -1,5 +1,6 @@
-import { _decorator, Component, Enum, Widget, Vec2, Vec3 } from 'cc';
+import { _decorator, Component, Enum, Widget, Vec2, Vec3, sys, view, Prefab, instantiate, UITransform } from 'cc';
 import { GameConfig } from '../../com/game_config';
+import ResourceManager from '../../manager/resoure_manager';
 const { ccclass, property, menu } = _decorator;
 
 enum AdaptationType {
@@ -14,7 +15,7 @@ enum AdaptationType {
 export default class ScreenAdapter extends Component {
 
     @property({ type: Enum(AdaptationType) })
-    adaptationStyle: AdaptationType = AdaptationType.Letf;
+    adaptationStyle: AdaptationType = AdaptationType.Top;
     private _hasAdaptation = false
 
     start() {
@@ -27,6 +28,11 @@ export default class ScreenAdapter extends Component {
         }
         this._hasAdaptation = true
         let widget = this.node.getComponent(Widget)
+        
+
+        let safeArea = sys.getSafeAreaRect();
+        let viewSize = view.getVisibleSize();
+        GameConfig.iphonexOffset = (viewSize.height - safeArea.height) / 2;
         let offset = GameConfig.iphonexOffset//偏移齐刘海宽度
 
         switch (this.adaptationStyle) {
@@ -61,5 +67,31 @@ export default class ScreenAdapter extends Component {
             default:
                 break;
         }
+        widget.updateAlignment();
+
+        // ResourceManager.getTopAdapPrefab("resources", "prefabs/hall/topAdap", Prefab, null, (err: Error, prefab: Prefab) => {
+        //     if (err) {
+        //         console.error("load module error:","prefabs/hall/topAdap", err);
+        //     } else {
+        //         let newNode = instantiate(prefab)
+        //         this.node.addChild(newNode);
+        //         let uitransform = newNode.getComponent(UITransform)
+        //         uitransform.setContentSize(uitransform.contentSize.width, GameConfig.iphonexOffset + 8)
+        //         let widget = newNode.getComponent(Widget)
+        //         widget.top = -GameConfig.iphonexOffset 
+        //     }
+        // })
+        ResourceManager.getTopAdapPrefab( (prefab: Prefab) => {
+            if (prefab == null) {
+                console.error("load module error:","prefabs/hall/topAdap");
+            } else {
+                let newNode = instantiate(prefab)
+                this.node.addChild(newNode);
+                let uitransform = newNode.getComponent(UITransform)
+                uitransform.setContentSize(uitransform.contentSize.width, GameConfig.iphonexOffset + 8)
+                let widget = newNode.getComponent(Widget)
+                widget.top = -GameConfig.iphonexOffset 
+            }
+        })
     }
 }

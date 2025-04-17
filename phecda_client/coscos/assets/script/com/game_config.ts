@@ -55,7 +55,7 @@ export class _GameConfig {
     }
 
     apiLogMode = true//http日志
-    isIphoneX = false//用于刘海屏偏离显示
+    isIphoneX = true//用于刘海屏偏离显示
     iphonexOffset = 60
     designResolution = v2(750, 1334)
 

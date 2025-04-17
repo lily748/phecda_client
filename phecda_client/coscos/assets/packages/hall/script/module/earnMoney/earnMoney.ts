@@ -257,7 +257,7 @@ export class EarnMoney extends Module<EarnMoneyView, null>{
     private _JumpShare() {
         let info = {
             shareType: 0,
-            title: "11game",
+            title: "c1games",
             shareUrl: this.shareInfo,
             imgPath: ""
         }

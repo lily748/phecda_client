@@ -100,7 +100,7 @@ export class turntable_share extends Component {
     JumpShare() {
         let info = {
             shareType: 0,
-            title: "11game",
+            title: "c1games",
             shareUrl: this.shareInfo,
             imgPath: ""
         }

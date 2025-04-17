@@ -123,7 +123,7 @@ export default class CustomerSupport  extends Module<CustomerSupportView, null> 
     private onOnlineCustomClick() {
         let user = UserDataModel.GetCurrentUser()
         let showID = user ? user.show_id : "invalidUser"
-        sys.openURL("https://t.me/in4pgame")//GameConfig.CustomerUrl+`?userid=${showID}`)
+        sys.openURL("https://t.me/C1Gamesone")//GameConfig.CustomerUrl+`?userid=${showID}`)
     }
 
     private setUserInfo() {

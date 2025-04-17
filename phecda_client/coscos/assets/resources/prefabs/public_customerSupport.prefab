@@ -148,8 +148,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
-      "height": 1334
+      "width": 960,
+      "height": 640
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -307,7 +307,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 667,
+      "y": 320,
       "z": 0
     },
     "_lrot": {
@@ -361,7 +361,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -323,
+      "x": -428,
       "y": -50,
       "z": 0
     },
@@ -674,7 +674,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 323.481,
+      "x": 428.481,
       "y": -44.5015,
       "z": 0
     },
@@ -1112,7 +1112,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
+      "width": 960,
       "height": 92
     },
     "_anchorPoint": {
@@ -1253,7 +1253,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -667.0000000000009,
+      "y": -320.0000000000009,
       "z": 0
     },
     "_lrot": {
@@ -2050,7 +2050,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
+      "width": 960,
       "height": 154.569
     },
     "_anchorPoint": {
@@ -2188,7 +2188,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 572.0330000000004,
+      "y": 225.03300000000036,
       "z": 0
     },
     "_lrot": {
@@ -2465,7 +2465,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
+      "width": 960,
       "height": 449.43399999999997
     },
     "_anchorPoint": {
@@ -2574,8 +2574,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
-      "height": 1088.1385863890146
+      "width": 960,
+      "height": 394.13858638901456
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2679,8 +2679,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
-      "height": 1088.1385863890146
+      "width": 960,
+      "height": 394.13858638901456
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3743,7 +3743,7 @@
       "b": 22,
       "a": 255
     },
-    "_string": "https://t.me/in4pgame",
+    "_string": "https://t.me/C1Gamesone",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 26,
@@ -4944,8 +4944,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 750,
-      "height": 1334
+      "width": 960,
+      "height": 640
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
